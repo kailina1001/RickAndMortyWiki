@@ -1,5 +1,5 @@
 .about-series {
-  margin: 0 95px 50px 95px;
+  margin-bottom: 80px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
@@ -10,7 +10,7 @@
 }
 
 .about-series-more {
-  margin: 0 95px 80px 95px;
+  margin-bottom: 80px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: bold;

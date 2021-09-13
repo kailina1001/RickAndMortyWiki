@@ -48,6 +48,6 @@ dd {
   margin-bottom: 10px;
 }
 
-a {
+.character-info-list a {
   border: 1px solid #ff81f9;
 }

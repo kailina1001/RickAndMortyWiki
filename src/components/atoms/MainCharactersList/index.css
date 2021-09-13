@@ -21,6 +21,7 @@
 
 .main-characters-cards {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, 300px);
   gap: 25px;
   margin-bottom: 43px;

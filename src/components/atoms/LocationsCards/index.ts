@@ -1,0 +1,1 @@
+export { LocationsCards } from "./LocationsCards";

@@ -1,0 +1,29 @@
+.locations-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0 110px;
+}
+
+.locations-search {
+  margin-bottom: 55px;
+  width: 250px;
+  height: 45px;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  font-family: "Roboto";
+  padding-left: 20px;
+}
+
+select {
+  margin-bottom: 55px;
+  width: 250px;
+  height: 45px;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: "Roboto";
+  padding-left: 20px;
+}
