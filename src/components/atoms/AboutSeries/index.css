@@ -1,0 +1,21 @@
+.about-series {
+  margin: 0 95px 50px 95px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 30px;
+  color: #006d7c;
+  text-align: center;
+}
+
+.about-series-more {
+  margin: 0 95px 80px 95px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 30px;
+  color: #006d7c;
+  text-align: center;
+}

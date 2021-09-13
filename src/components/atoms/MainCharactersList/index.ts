@@ -1,0 +1,1 @@
+export { MainCharactersList } from "./MainCharactersList";

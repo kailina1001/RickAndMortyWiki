@@ -1,0 +1,1 @@
+export { MainPageSearch } from "./MainPageSearch";
