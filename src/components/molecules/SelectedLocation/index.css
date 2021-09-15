@@ -1,47 +1,81 @@
-.selected-location-wrapper {
+.selected-episode-wrapper {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
   margin-bottom: 100px;
   max-width: 100%;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 220px;
+  margin-right: 220px;
   min-height: 825px;
   background: #ebebeb;
   border: 1px solid #ebebeb;
   box-sizing: border-box;
   border-radius: 13px;
-  padding: 30px 100px 30px 100px;
+  padding: 30px 100px 10px 100px;
 }
 
-.selected-location-header {
+.selected-episode-header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
-.selected-location-btn {
+.selected-episode-btn {
+  position: absolute;
+  left: 5px;
   margin-bottom: 50px;
-
-  width: 230px;
-  height: 68px;
+  width: 100px;
+  height: 35px;
   background: #dcf8cf;
   border: 1px solid #006d7c;
   border-radius: 13px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
-  line-height: 33px;
+  font-size: 18px;
+  line-height: 1.75;
   color: #006d7c;
 }
 
-.character-pic {
-  margin-bottom: 25px;
+.selected-episode-info {
+  display: flex;
+  flex-direction: column;
 }
 
-.selected-location-info {
+.location-type {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.location-name {
+  /* margin-left: 100px; */
+  margin-bottom: 50px;
+  width: 200px;
+  height: 35px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.75;
+  color: #006d7c;
+  display: flex;
+  align-items: flex-start;
+}
+
+.residents-title {
+  margin-bottom: 20px;
+
+  justify-content: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.15px;
+  color: #8e8e93;
 }

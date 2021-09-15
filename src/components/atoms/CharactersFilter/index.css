@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: 0 110px;
+  margin: 0 25px;
 }
 
 .characters-search {
-  margin-bottom: 55px;
-  width: 250px;
-  height: 45px;
+  margin-bottom: 20px;
+  width: 120px;
+  height: 30px;
   border: 1px solid #ebebeb;
   box-sizing: border-box;
   border-radius: 8px;
@@ -18,9 +18,9 @@
 }
 
 select {
-  margin-bottom: 55px;
-  width: 250px;
-  height: 45px;
+  margin-bottom: 20px;
+  width: 140px;
+  height: 32px;
   border: 1px solid #ebebeb;
   box-sizing: border-box;
   border-radius: 8px;

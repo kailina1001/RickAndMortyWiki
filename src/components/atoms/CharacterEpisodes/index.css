@@ -8,13 +8,13 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 1.75;
   display: flex;
   align-items: center;
   letter-spacing: 0.15px;
   color: #8e8e93;
-  margin-bottom: 36px;
+  margin-bottom: 15px;
 }
 
 .character-episode-list {
@@ -23,15 +23,15 @@
 }
 
 dl {
-  width: 413px;
+  width: 250px;
 }
 
 dt {
   font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 1.75;
   text-align: left;
   color: #006d7c;
   margin-bottom: 3px;
@@ -41,8 +41,8 @@ dt {
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 1.5;
   text-align: left;
   color: #6e798c;
   margin-bottom: 3px;

@@ -12,8 +12,8 @@ export const SelectedCharacter = memo(() => {
       <div className="selected-character-header">
         <button className="selected-character-btn">Go back</button>
         <img src={characterPic} className="character-pic" />
-        <Title title={"Rick Sanchez"} />
       </div>
+      <Title title={"Rick Sanchez"} />
       <div className="selected-character-info">
         <CharacterInfo />
         <CharacterEpisodes />

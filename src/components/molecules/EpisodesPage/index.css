@@ -1,4 +1,4 @@
-.main-page {
+.episodes-page {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -14,29 +14,20 @@
   padding: 10px 100px 10px 100px;
 }
 
-.main-page-logo-search {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.main-page-logo {
-  width: 420px;
-  height: 160px;
+.episodes-page-logo {
   margin-bottom: 15px;
+  width: 320px;
+  height: 200px;
 }
 
-.info {
+.episodes-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.main-characters {
+.episodes-page {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
-  margin-left: 100px;
-  margin-right: 100px;
-  min-height: 300px;
+  align-items: center;
 }

@@ -1,7 +1,7 @@
 .some-card {
   margin-left: 0;
-  max-width: 300px;
-  height: 300px;
+  max-width: 180px;
+  height: 180px;
   background: #f8cff8;
   border: 1px solid #ebebeb;
   box-sizing: border-box;
@@ -13,8 +13,8 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 1.75;
   text-align: left;
   color: #006d7c;
 }
@@ -22,7 +22,7 @@
 .main-characters-cards {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, 180px);
   gap: 25px;
-  margin-bottom: 43px;
+  margin-bottom: 20px;
 }

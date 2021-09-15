@@ -6,6 +6,9 @@ import { MainPage } from "./components/molecules/MainPage";
 import { CharactersPage } from "./components/molecules/CharactersPage";
 import { SelectedCharacter } from "./components/molecules/SelectedCharacter";
 import { LocationsPage } from "./components/molecules/LocationsPage";
+
+import { EpisodesPage } from "./components/molecules/EpisodesPage";
+import { SelectedEpisode } from "./components/molecules/SelectedEpisode";
 import { SelectedLocation } from "./components/molecules/SelectedLocation";
 
 function App() {
@@ -18,6 +21,8 @@ function App() {
         <SelectedCharacter />
         <LocationsPage />
         <SelectedLocation />
+        <EpisodesPage />
+        <SelectedEpisode />
       </main>
     </div>
   );
