@@ -4,19 +4,20 @@
   /* align-items: center; */
   margin-bottom: 100px;
   max-width: 100%;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 220px;
+  margin-right: 220px;
   min-height: 825px;
   background: #ebebeb;
   border: 1px solid #ebebeb;
   box-sizing: border-box;
   border-radius: 13px;
+  padding: 10px 100px 10px 100px;
 }
 
 .characters-page-logo {
-  margin-bottom: 45px;
-  width: 594px;
-  height: 228px;
+  margin-bottom: 15px;
+  width: 420px;
+  height: 160px;
 }
 
 .characters-logo {

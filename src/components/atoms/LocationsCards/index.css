@@ -1,0 +1,54 @@
+.locations-card {
+  margin-left: 0;
+  max-width: 180px;
+  height: 180px;
+  background: #dcf8cf;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 35px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.75;
+  text-align: left;
+  color: #006d7c;
+}
+
+.locations-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 180px);
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.location-dimension {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
+  mix-blend-mode: normal;
+}
+
+.location-type {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.6);
+  mix-blend-mode: normal;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 3px 0px;
+}

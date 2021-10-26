@@ -1,11 +1,11 @@
-.characters-filter {
+.locations-filter {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   margin: 0 25px;
 }
 
-.characters-search {
+.locations-search {
   margin-bottom: 20px;
   width: 120px;
   height: 30px;
@@ -24,7 +24,6 @@ select {
   border: 1px solid #ebebeb;
   box-sizing: border-box;
   border-radius: 8px;
-
   font-family: "Roboto";
   padding-left: 20px;
 }
