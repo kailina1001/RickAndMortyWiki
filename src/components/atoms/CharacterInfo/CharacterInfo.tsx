@@ -1,6 +1,14 @@
 import * as React from "react";
 import { memo } from "react";
 import "./index.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useHistory,
+} from "react-router-dom";
 
 export const CharacterInfo = memo(() => {
   return (
@@ -17,10 +25,10 @@ export const CharacterInfo = memo(() => {
         <dd>Earth (C-137)</dd>
         <dt>Type</dt>
         <dd>Unknown</dd>
-        <a href="#">
+        <Link className="for-link" to={"/location"}>
           <dt>Location</dt>
           <dd>Earth (Replacement Dimension)</dd>
-        </a>
+        </Link>
       </dl>
     </div>
   );

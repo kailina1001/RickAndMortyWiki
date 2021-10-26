@@ -1,31 +1,45 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { Navigation } from "./components/molecules/Navigation";
-import { MainPage } from "./components/molecules/MainPage";
-import { CharactersPage } from "./components/molecules/CharactersPage";
-import { SelectedCharacter } from "./components/molecules/SelectedCharacter";
-import { LocationsPage } from "./components/molecules/LocationsPage";
-
-import { EpisodesPage } from "./components/molecules/EpisodesPage";
-import { SelectedEpisode } from "./components/molecules/SelectedEpisode";
-import { SelectedLocation } from "./components/molecules/SelectedLocation";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
+import { PublicRoute } from "./router/PublicRoute";
+import { Home } from "./components/pages/Main";
+import { Characters } from "./components/pages/Characters";
+import { Locations } from "./components/pages/Locations";
+import { Episodes } from "./components/pages/Episodes";
+import { SelectedCharacter } from "./components/pages/SelectedCharacter";
+import { SelectedLocation } from "./components/pages/SelectedLocation";
+import { SelectedEpisode } from "./components/pages/SelectedEpisode";
 
 function App() {
   return (
-    <div className="app">
-      <Navigation />
-      <main>
-        <MainPage />
-        <CharactersPage />
-        <SelectedCharacter />
-        <LocationsPage />
-        <SelectedLocation />
-        <EpisodesPage />
-        <SelectedEpisode />
-      </main>
+    <div>
+      <Switch>
+        <PublicRoute component={Home} path="/" exact />
+        <PublicRoute component={Characters} path="/characters" exact />
+        <PublicRoute component={Locations} path="/locations" exact />
+        <PublicRoute component={Episodes} path="/episodes" exact />
+        <PublicRoute
+          component={SelectedCharacter}
+          path="/character/:id"
+          exact
+        />
+        <PublicRoute component={SelectedLocation} path="/location/" exact />
+        <PublicRoute component={SelectedEpisode} path="/episode/" exact />
+      </Switch>
     </div>
   );
 }
 
 export default App;
+
+/*   
+!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<PublicRoute component={SelectedCharacter} path="/character/:uid" exact />
+<PublicRoute component={SelectedLocation} path="/location/:uid" exact />
+        <PublicRoute component={SelectedEpisode} path="/episode/:uid" exact /> */

@@ -1,1 +1,0 @@
-export { SelectedCharacter } from "./SelectedCharacter";
