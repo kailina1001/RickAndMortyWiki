@@ -6,8 +6,12 @@ import { MainPageSearch } from "../atoms/MainPageSearch";
 import { Title } from "../atoms/Title";
 import { AboutSeries } from "../atoms/AboutSeries";
 import { MainCharactersList } from "../atoms/MainCharactersList";
+import { useSelector } from "react-redux";
+import { getSerialState } from "../../core/selectors/serialSelector";
 
 export const Home = memo(() => {
+  const { mainCharacter } = useSelector(getSerialState);
+
   return (
     <div>
       <MainTemplate
@@ -24,7 +28,7 @@ export const Home = memo(() => {
               </div>
               <div className="main-characters">
                 <Title title={"Main Characters"} />
-                <MainCharactersList />
+                <MainCharactersList mainCharacter={mainCharacter} />
               </div>
             </div>
           </div>

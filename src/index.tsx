@@ -7,11 +7,18 @@ import { BrowserRouter } from "react-router-dom";
 import { CharacterService } from "./services/CharacterService";
 import { EpisodeService } from "./services/EpisodeService";
 import { LocationService } from "./services/LocationService";
+import { Provider } from "react-redux";
+import { store } from "./core/store";
 
 CharacterService.setCredentials({
   URL: "https://rickandmortyapi.com/api/",
 });
 CharacterService.prefix = "character";
+
+LocationService.setCredentials({
+  URL: "https://rickandmortyapi.com/api/",
+});
+LocationService.prefix = "location";
 
 EpisodeService.setCredentials({
   URL: "https://rickandmortyapi.com/api/",
@@ -19,25 +26,13 @@ EpisodeService.setCredentials({
 
 EpisodeService.prefix = "episode";
 
-LocationService.setCredentials({
-  URL: "https://rickandmortyapi.com/api/",
-});
-LocationService.prefix = "location";
-
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
-
-reportWebVitals();
-
-/* ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
       <App />
     </Provider>
   </BrowserRouter>,
   document.getElementById("root")
-); */
+);
+
+reportWebVitals();

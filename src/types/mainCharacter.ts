@@ -1,23 +1,23 @@
-export interface IСharacter {
+export interface IMainСharacter {
   id: number;
   name: string;
   status: string;
   species: string;
   type: string;
   gender: string;
-  origin: IEpisodeCharacter;
-  location: ILocationCharacter;
+  origin: IMainEpisodeCharacter;
+  location: IMainLocationCharacter;
   image: string;
   episode: string[];
   url: string;
   created: string;
 }
-export interface IEpisodeCharacter {
+export interface IMainEpisodeCharacter {
   name: string;
   url: string;
 }
 
-export interface ILocationCharacter {
+export interface IMainLocationCharacter {
   name: string;
   url: string;
 }

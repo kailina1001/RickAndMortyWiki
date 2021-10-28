@@ -1,5 +1,3 @@
-import { ILocation, IEpisode } from "../../types/index";
-import { IСharacter } from "../../types/character";
 import { ActionType, createReducer } from "typesafe-actions";
 import {
   setCharacterAction,
@@ -9,7 +7,15 @@ import {
   setEpisodesAction,
   setSelectedEpisodesAction,
   setSerialErrorAction,
+  setCurrentCharacterPageAction,
+  setCurrentLocationPageAction,
+  setCurrentEpisodePageAction,
+  setMainCharacterAction,
 } from "../actions/serialAction";
+import { IСharacter } from "../../types/character";
+import { ILocation } from "../../types/location";
+import { IEpisode } from "../../types/episode";
+import { IMainСharacter } from "../../types/mainCharacter";
 
 export interface ISerialState {
   character: IСharacter[] | null;
@@ -19,6 +25,10 @@ export interface ISerialState {
   episode: IEpisode[] | null;
   selectedEpisode: IEpisode[] | null;
   serialError: string | null;
+  currentCharacterPage: number;
+  currentLocationPage: number;
+  currentEpisodePage: number;
+  mainCharacter: IMainСharacter[] | null;
 }
 
 const defaultState: ISerialState = {
@@ -29,6 +39,10 @@ const defaultState: ISerialState = {
   episode: null,
   selectedEpisode: null,
   serialError: null,
+  currentCharacterPage: 1,
+  currentLocationPage: 1,
+  currentEpisodePage: 1,
+  mainCharacter: null,
 };
 
 const actions = {
@@ -39,6 +53,10 @@ const actions = {
   setEpisodesAction,
   setSelectedEpisodesAction,
   setSerialErrorAction,
+  setCurrentCharacterPageAction,
+  setCurrentLocationPageAction,
+  setCurrentEpisodePageAction,
+  setMainCharacterAction,
 };
 
 export const serialReducer = createReducer<
@@ -81,4 +99,32 @@ export const serialReducer = createReducer<
   .handleAction(setSerialErrorAction, (state, { payload: serialError }) => ({
     ...state,
     serialError,
-  }));
+  }))
+  .handleAction(
+    setCurrentCharacterPageAction,
+    (state, { payload: currentCharacterPage }) => ({
+      ...state,
+      currentCharacterPage,
+    })
+  )
+  .handleAction(
+    setCurrentLocationPageAction,
+    (state, { payload: currentLocationPage }) => ({
+      ...state,
+      currentLocationPage,
+    })
+  )
+  .handleAction(
+    setCurrentEpisodePageAction,
+    (state, { payload: currentEpisodePage }) => ({
+      ...state,
+      currentEpisodePage,
+    })
+  )
+  .handleAction(
+    setMainCharacterAction,
+    (state, { payload: mainCharacter }) => ({
+      ...state,
+      mainCharacter,
+    })
+  );

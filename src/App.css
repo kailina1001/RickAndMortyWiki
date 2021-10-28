@@ -400,6 +400,12 @@ textarea {
   align-items: center;
 }
 
+.pages-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 /* ---------------------------------------Locations------------------------------------------------------- */
 
 .locations-page {

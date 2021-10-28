@@ -1,11 +1,11 @@
 import { BaseService } from "./BaseService";
 
 class EpisodeAPIService extends BaseService {
-  public async getEpisode() {
-    return this.get("episode/?limit=41");
+  public async getEpisode(currentEpisodePage: number) {
+    return this.get(`/?page=${currentEpisodePage}`);
   }
   public async getSelectedEpisode(id: any) {
-    return this.get(`episode/${id}`);
+    return this.get(`/${id}`);
   }
 }
 export const EpisodeService = new EpisodeAPIService();

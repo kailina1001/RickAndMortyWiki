@@ -15,6 +15,7 @@ import { Episodes } from "./components/pages/Episodes";
 import { SelectedCharacter } from "./components/pages/SelectedCharacter";
 import { SelectedLocation } from "./components/pages/SelectedLocation";
 import { SelectedEpisode } from "./components/pages/SelectedEpisode";
+import { ErrorPage } from "./components/pages/ErrorPage";
 
 function App() {
   return (
@@ -29,17 +30,12 @@ function App() {
           path="/character/:id"
           exact
         />
-        <PublicRoute component={SelectedLocation} path="/location/" exact />
-        <PublicRoute component={SelectedEpisode} path="/episode/" exact />
+        <PublicRoute component={SelectedLocation} path="/location/:id" exact />
+        <PublicRoute component={SelectedEpisode} path="/episode/:id" exact />
+        <PublicRoute component={ErrorPage} exact />
       </Switch>
     </div>
   );
 }
 
 export default App;
-
-/*   
-!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<PublicRoute component={SelectedCharacter} path="/character/:uid" exact />
-<PublicRoute component={SelectedLocation} path="/location/:uid" exact />
-        <PublicRoute component={SelectedEpisode} path="/episode/:uid" exact /> */

@@ -21,3 +21,23 @@ export interface ILocationCharacter {
   name: string;
   url: string;
 }
+
+export interface ILocation {
+  id: number;
+  name: string;
+  type: string;
+  dimension: string;
+  residents: string[];
+  url: string;
+  created: string;
+}
+
+export interface IEpisode {
+  id: number;
+  name: string;
+  air_data: string;
+  episode: string;
+  characters: string[];
+  url: string;
+  created: string;
+}
