@@ -32,9 +32,10 @@ function* getSelectedCharacterSaga({ payload: id }: Action<number>) {
     const data: { data: any } = yield call(() =>
       CharacterService.getSelectedCharacter(id)
     );
+
     yield put(setSelectedCharacterAction(data.data));
     console.log(data.data);
-    //!!!!!!!!!!!!!!!!!нет result
+    //!!!!!!!!!!!!!!!!!нет result!
   } catch (e: any) {
     yield put(setSerialErrorAction("Selected character not found"));
   }

@@ -5,7 +5,7 @@ import { ResidentsCards } from "../atoms/ResidentsCards";
 import { Title } from "../atoms/Title";
 import locationCharacters from "../../images/locationCharacters.png";
 import { CharacterInfo } from "../atoms/CharacterInfo";
-import { CharacterEpisodes } from "../atoms/CharacterEpisodes";
+
 import { GoBackBtn } from "../atoms/GoBackBtn";
 import { DescriptionTitle } from "../atoms/DescriptionTitle";
 import { DescriptionText } from "../atoms/DescriptionText";

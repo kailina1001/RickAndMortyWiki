@@ -10,7 +10,6 @@ import { SelectedCharacter } from "../molecules/SelectedCharacter";
 export const SelectedCharacterPage = memo(() => {
   const params = useParams() as any;
   const { selectedCharacter } = useSelector(getSerialState) as any;
-  console.log(selectedCharacter);
 
   const dispatch = useDispatch();
 
