@@ -1,11 +1,11 @@
 .main-page-search {
-  margin-bottom: 20px;
-  width: 300px;
+  width: 330px;
   height: 32px;
   border: 1px solid #ebebeb;
   box-sizing: border-box;
   border-radius: 8px;
-
   font-family: "Roboto";
   padding-left: 20px;
+  display: block;
+  margin: 0 auto 20px auto;
 }

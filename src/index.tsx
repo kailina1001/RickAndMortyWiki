@@ -1,17 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { CharacterService } from "./services/CharacterService";
+import { EpisodeService } from "./services/EpisodeService";
+import { LocationService } from "./services/LocationService";
+
+CharacterService.setCredentials({
+  URL: "https://rickandmortyapi.com/api/",
+});
+CharacterService.prefix = "character";
+
+EpisodeService.setCredentials({
+  URL: "https://rickandmortyapi.com/api/",
+});
+
+EpisodeService.prefix = "episode";
+
+LocationService.setCredentials({
+  URL: "https://rickandmortyapi.com/api/",
+});
+LocationService.prefix = "location";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </BrowserRouter>,
+  document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+/* ReactDOM.render(
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
+  document.getElementById("root")
+); */

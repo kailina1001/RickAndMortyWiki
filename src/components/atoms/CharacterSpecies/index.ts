@@ -1,0 +1,1 @@
+export { CharacterSpecies } from "./CharacterSpecies";

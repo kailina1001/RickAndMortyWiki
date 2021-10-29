@@ -1,0 +1,16 @@
+.selected-btn {
+  position: absolute;
+  left: 5px;
+  margin-bottom: 50px;
+  width: 100px;
+  height: 35px;
+  background: #dcf8cf;
+  border: 1px solid #006d7c;
+  border-radius: 13px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #006d7c;
+}

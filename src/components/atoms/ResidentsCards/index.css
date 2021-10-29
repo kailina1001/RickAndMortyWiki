@@ -1,7 +1,6 @@
-.character-card {
+.resident-card {
   margin-left: 0;
-  max-width: 180px;
-  height: 180px;
+  height: 100%;
   background: #dcf8cf;
   border: 1px solid #ebebeb;
   box-sizing: border-box;
@@ -9,7 +8,6 @@
   display: flex;
   flex-direction: column;
   padding: 30px 35px;
-
   font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
@@ -19,10 +17,9 @@
   color: #006d7c;
 }
 
-.characters-cards {
+.residents-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 180px);
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 25px;
   margin-bottom: 20px;
 }
