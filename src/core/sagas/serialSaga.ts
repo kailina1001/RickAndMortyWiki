@@ -9,16 +9,19 @@ import {
   setEpisodesAction,
   setSelectedEpisodesAction,
   setSerialErrorAction,
+  setMainCharacterAction,
 } from "../actions/serialAction";
 import { CharacterService } from "../../services/CharacterService";
 import { LocationService } from "../../services/LocationService";
 import { EpisodeService } from "../../services/EpisodeService";
 
-function* getCharacterSaga() {
+function* getCharacterSaga({ payload: currentCharacterPage }: Action<number>) {
   try {
     const data: { data: any } = yield call(() =>
-      CharacterService.getCharacter()
+      CharacterService.getCharacter(currentCharacterPage)
     );
+    console.log(data.data.results);
+
     yield put(setCharacterAction(data.data.results));
   } catch (e: any) {
     yield put(setSerialErrorAction("Character not found"));
@@ -36,9 +39,11 @@ function* getSelectedCharacterSaga({ payload: id }: Action<number>) {
   }
 }
 
-function* getLocationSaga() {
+function* getLocationSaga({ payload: currentLocationPage }: Action<number>) {
   try {
-    const data: { data: any } = yield call(() => LocationService.getLocation());
+    const data: { data: any } = yield call(() =>
+      LocationService.getLocation(currentLocationPage)
+    );
     yield put(setLocationAction(data.data.results));
   } catch (e: any) {
     yield put(setSerialErrorAction("Location not found"));
@@ -56,9 +61,11 @@ function* getSelectedLocationSaga({ payload: id }: Action<number>) {
   }
 }
 
-function* getEpisodeSaga() {
+function* getEpisodeSaga({ payload: currentEpisodePage }: Action<number>) {
   try {
-    const data: { data: any } = yield call(() => EpisodeService.getEpisode());
+    const data: { data: any } = yield call(() =>
+      EpisodeService.getEpisode(currentEpisodePage)
+    );
     yield put(setEpisodesAction(data.data.results));
   } catch (e: any) {
     yield put(setSerialErrorAction("Episode not found"));
@@ -76,17 +83,31 @@ function* getSelectedEpisodeSaga({ payload: id }: Action<number>) {
   }
 }
 
+function* getMainCharacterAction({ payload: mainCharacter }: Action<number>) {
+  try {
+    const data: { data: any } = yield call(() =>
+      CharacterService.getCharacter(mainCharacter)
+    );
+    console.log(data.data.results);
+
+    yield put(setMainCharacterAction(data.data.results));
+  } catch (e: any) {
+    yield put(setSerialErrorAction("Character not found"));
+  }
+}
+
 export function* serialSaga() {
-  yield takeEvery(ACTIONS.SET_CHARACTER_ACTION, getCharacterSaga);
+  yield takeEvery(ACTIONS.GET_CHARACTER_ACTION, getCharacterSaga);
   yield takeEvery(
-    ACTIONS.SET_SELECTED_CHARACTER_ACTION,
+    ACTIONS.GET_SELECTED_CHARACTER_ACTION,
     getSelectedCharacterSaga
   );
-  yield takeEvery(ACTIONS.SET_LOCATION_ACTION, getLocationSaga);
+  yield takeEvery(ACTIONS.GET_LOCATION_ACTION, getLocationSaga);
   yield takeEvery(
-    ACTIONS.SET_SELECTED_LOCATION_ACTION,
+    ACTIONS.GET_SELECTED_LOCATION_ACTION,
     getSelectedLocationSaga
   );
-  yield takeEvery(ACTIONS.SET_EPISODE_ACTION, getEpisodeSaga);
-  yield takeEvery(ACTIONS.SET_SELECTED_EPISODE_ACTION, getSelectedEpisodeSaga);
+  yield takeEvery(ACTIONS.GET_EPISODE_ACTION, getEpisodeSaga);
+  yield takeEvery(ACTIONS.GET_SELECTED_EPISODE_ACTION, getSelectedEpisodeSaga);
+  yield takeEvery(ACTIONS.GET_MAIN_CHARACTER_ACTION, getMainCharacterAction);
 }

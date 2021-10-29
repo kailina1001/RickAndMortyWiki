@@ -1,7 +1,7 @@
-export interface IСharacter {
+export interface IEpisode {
   id: number;
   name: string;
-  air_data: string;
+  air_date: string;
   episode: string;
   characters: string[];
   url: string;

@@ -1,7 +1,6 @@
 import * as React from "react";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import "./index.css";
-/* import locationCharacters from "../../../images/locationCharacters.png"; */
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,38 +8,41 @@ import {
   Link,
   Redirect,
 } from "react-router-dom";
-import { character } from "../../../mock";
 import { CharacterName } from "../CharacterName";
 import { CharacterImg } from "../CharacterImg";
 import { CharacterSpecies } from "../CharacterSpecies";
-import { IСharacter } from "../../../types";
-
-/* interface ICharacterCard {
-  onClickCharacterCard: (id: number) => void;
-} 
-{ onClickCharacterCard }: ICharacterCard*/
+import { useDispatch, useSelector } from "react-redux";
+import { getSerialState } from "../../../core/selectors/serialSelector";
+import { getCharacterAction } from "../../../core/actions";
 
 interface ICharactersCard {
-  character: IСharacter[];
+  currentCharacterPage: number;
 }
 
-export const CharactersCard = memo(({ character }: ICharactersCard) => {
-  return (
-    <div className="characters-cards-wrapper">
-      {character?.map((character) => (
-        <div key={character.id}>
-          <Link className="for-link" to={"/character/" + character.id}>
-            <div
-              className="character-card"
-              /* onClick={() => onClickCharacterCard(character.id)} */
-            >
-              <CharacterImg image={character.image} />
-              <CharacterName name={character.name} />
-              <CharacterSpecies species={character.species} />
-            </div>
-          </Link>
-        </div>
-      ))}
-    </div>
-  );
-});
+export const CharactersCard = memo(
+  ({ currentCharacterPage }: ICharactersCard) => {
+    const dispatch = useDispatch();
+
+    const { character } = useSelector(getSerialState);
+
+    useEffect(() => {
+      dispatch(getCharacterAction(currentCharacterPage));
+    }, [dispatch, currentCharacterPage]);
+
+    return (
+      <div className="characters-cards-wrapper">
+        {character?.map((character) => (
+          <div key={character.id}>
+            <Link className="for-link" to={"/character/" + character.id}>
+              <div className="character-card">
+                <CharacterImg image={character.image} />
+                <CharacterName name={character.name} />
+                <CharacterSpecies species={character.species} />
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
+    );
+  }
+);

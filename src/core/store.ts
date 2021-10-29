@@ -4,7 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import { rootReducer } from "./rootReducer";
 
-import { rootSaga } from "./rootSaga";
+import { rootSaga } from "./saga";
 
 import { IState } from "./types";
 
