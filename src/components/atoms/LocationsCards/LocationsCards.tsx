@@ -23,9 +23,7 @@ export const LocationsCards = memo(
   ({ currentLocationPage }: ILocationsCards) => {
     const dispatch = useDispatch();
 
-    const { location } = useSelector(getSerialState);
-
-    console.log(location);
+    const { locations } = useSelector(getSerialState);
 
     useEffect(() => {
       dispatch(getLocationAction(currentLocationPage));
@@ -33,13 +31,13 @@ export const LocationsCards = memo(
 
     return (
       <div className="locations-cards-wrapper">
-        {location?.map((location) => (
-          <div key={location.id}>
-            <Link className="for-link" to={"/location/" + location.id}>
+        {locations?.map((locations) => (
+          <div key={locations.id}>
+            <Link className="for-link" to={"/location/" + locations.id}>
               <div className="locations-card">
-                <LocationName name={location.name} />
-                <LocationDimension dimension={location.dimension} />
-                <LocationType type={location.type} />
+                <LocationName name={locations.name} />
+                <LocationDimension dimension={locations.dimension} />
+                <LocationType type={locations.type} />
               </div>
             </Link>
           </div>

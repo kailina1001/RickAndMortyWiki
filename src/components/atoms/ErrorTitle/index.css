@@ -1,0 +1,11 @@
+.error-title {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 1.75;
+  text-align: center;
+  color: #006d7c;
+}

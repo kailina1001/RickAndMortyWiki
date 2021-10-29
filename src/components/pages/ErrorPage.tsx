@@ -6,6 +6,8 @@ import { MainPageSearch } from "../atoms/MainPageSearch";
 import { Title } from "../atoms/Title";
 import { AboutSeries } from "../atoms/AboutSeries";
 import { MainCharactersList } from "../atoms/MainCharactersList";
+import errorImg from "../../images/error-page.gif";
+import { ErrorTitle } from "../atoms/ErrorTitle";
 
 export const ErrorPage = memo(() => {
   return (
@@ -13,9 +15,8 @@ export const ErrorPage = memo(() => {
       <MainTemplate
         mainBlock={
           <div className="error-page">
-            <main>
-              <Title title={"Not Found"} />
-            </main>
+            <ErrorTitle title={"Not Found"} />
+            <img src={errorImg} className="error-page-pic" />
           </div>
         }
       />

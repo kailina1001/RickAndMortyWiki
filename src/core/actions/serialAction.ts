@@ -18,10 +18,10 @@ export const setCurrentCharacterPageAction = createAction(
 
 export const setSelectedCharacterAction = createAction(
   ACTIONS.SET_SELECTED_CHARACTER_ACTION
-)<any>();
+)<IСharacter | null>();
 export const getSelectedCharacterAction = createAction(
   ACTIONS.GET_SELECTED_CHARACTER_ACTION
-)();
+)<IСharacter | null>();
 
 export const setLocationAction = createAction(ACTIONS.SET_LOCATION_ACTION)<
   ILocation[] | null
@@ -35,10 +35,10 @@ export const setCurrentLocationPageAction = createAction(
 
 export const setSelectedLocationAction = createAction(
   ACTIONS.SET_SELECTED_LOCATION_ACTION
-)<ILocation[] | null>();
+)<ILocation | null>();
 export const getSelectedLocationAction = createAction(
   ACTIONS.GET_SELECTED_LOCATION_ACTION
-)<ILocation[] | null>();
+)<ILocation | null>();
 
 export const setEpisodesAction = createAction(ACTIONS.SET_EPISODE_ACTION)<
   IEpisode[] | null
@@ -52,10 +52,10 @@ export const setCurrentEpisodePageAction = createAction(
 
 export const setSelectedEpisodesAction = createAction(
   ACTIONS.SET_SELECTED_EPISODE_ACTION
-)<IEpisode[] | null>();
+)<IEpisode | null>();
 export const getSelectedEpisodesAction = createAction(
   ACTIONS.GET_SELECTED_EPISODE_ACTION
-)<IEpisode[] | null>();
+)<IEpisode | null>();
 
 export const setSerialErrorAction = createAction(
   ACTIONS.SET_SERIAL_ERROR_ACTION

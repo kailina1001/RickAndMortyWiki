@@ -9,33 +9,33 @@ import {
   Redirect,
   useHistory,
 } from "react-router-dom";
+import { ILocation } from "../../../types/location";
 
-export const CharacterEpisodes = memo(() => {
-  return (
-    <div className="character-episodes">
-      <h3 className="character-episode-title">Episodes</h3>
-      <dl className="character-episode-list">
-        <Link className="for-link" to={"/episode"}>
-          <dt>S01E01</dt>
-          <dd>Pilot</dd>
-          <dd>December 2, 2013</dd>
-        </Link>
-        <Link className="for-link" to={"/episode"}>
-          <dt>S01E02</dt>
-          <dd>Lawnmower Dog</dd>
-          <dd>December 9, 2013</dd>
-        </Link>
-        <Link className="for-link" to={"/episode"}>
-          <dt>S01E03</dt>
-          <dd>Anatomy Park</dd>
-          <dd>December 16, 2013</dd>
-        </Link>
-        <Link className="for-link" to={"/episode"}>
-          <dt>S01E04</dt>
-          <dd>M. Night Shaym-Aliens!</dd>
-          <dd>January 13, 2014</dd>
-        </Link>
-      </dl>
-    </div>
-  );
-});
+interface ICharacterEpisodes {
+  episode: string;
+  name: string;
+  air_date: string;
+}
+
+export const CharacterEpisodes = memo(
+  ({ episode, name, air_date }: ICharacterEpisodes) => {
+    return (
+      <div className="character-episodes">
+        <h3 className="character-episode-title">Episodes</h3>
+        <dl className="character-episode-list">
+          <Link className="for-link" to={"/episode"}>
+            <dt> {episode}</dt>
+            <dd> {name}</dd>
+            <dd> {air_date}</dd>
+          </Link>
+        </dl>
+      </div>
+    );
+  }
+);
+
+{
+  /* <dt>S01E01 {episode}</dt>
+            <dd>Pilot {name}</dd>
+            <dd>December 2, 2013 {air_date}</dd> */
+}

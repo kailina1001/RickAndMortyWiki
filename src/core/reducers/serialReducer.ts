@@ -18,12 +18,12 @@ import { IEpisode } from "../../types/episode";
 import { IMainСharacter } from "../../types/mainCharacter";
 
 export interface ISerialState {
-  character: IСharacter[] | null;
-  selectedCharacter: IСharacter[] | null;
-  location: ILocation[] | null;
-  selectedLocation: ILocation[] | null;
-  episode: IEpisode[] | null;
-  selectedEpisode: IEpisode[] | null;
+  characters: IСharacter[] | null;
+  selectedCharacter: IСharacter | null;
+  locations: ILocation[] | null;
+  selectedLocation: ILocation | null;
+  episodes: IEpisode[] | null;
+  selectedEpisode: IEpisode | null;
   serialError: string | null;
   currentCharacterPage: number;
   currentLocationPage: number;
@@ -32,11 +32,11 @@ export interface ISerialState {
 }
 
 const defaultState: ISerialState = {
-  character: null,
+  characters: null,
   selectedCharacter: null,
-  location: null,
+  locations: null,
   selectedLocation: null,
-  episode: null,
+  episodes: null,
   selectedEpisode: null,
   serialError: null,
   currentCharacterPage: 1,
@@ -63,9 +63,9 @@ export const serialReducer = createReducer<
   ISerialState,
   ActionType<typeof actions>
 >(defaultState)
-  .handleAction(setCharacterAction, (state, { payload: character }) => ({
+  .handleAction(setCharacterAction, (state, { payload: characters }) => ({
     ...state,
-    character,
+    characters,
   }))
   .handleAction(
     setSelectedCharacterAction,
@@ -74,9 +74,9 @@ export const serialReducer = createReducer<
       selectedCharacter,
     })
   )
-  .handleAction(setLocationAction, (state, { payload: location }) => ({
+  .handleAction(setLocationAction, (state, { payload: locations }) => ({
     ...state,
-    location,
+    locations,
   }))
   .handleAction(
     setSelectedLocationAction,
@@ -85,9 +85,9 @@ export const serialReducer = createReducer<
       selectedLocation,
     })
   )
-  .handleAction(setEpisodesAction, (state, { payload: episode }) => ({
+  .handleAction(setEpisodesAction, (state, { payload: episodes }) => ({
     ...state,
-    episode,
+    episodes,
   }))
   .handleAction(
     setSelectedEpisodesAction,

@@ -8,7 +8,7 @@ export interface IСharacter {
   origin: IEpisodeCharacter;
   location: ILocationCharacter;
   image: string;
-  episode: string[];
+  episode: IEpisode;
   url: string;
   created: string;
 }
@@ -20,4 +20,14 @@ export interface IEpisodeCharacter {
 export interface ILocationCharacter {
   name: string;
   url: string;
+}
+
+export interface IEpisode {
+  id: number;
+  name: string;
+  air_date: string;
+  episode: string;
+  characters: string[];
+  url: string;
+  created: string;
 }

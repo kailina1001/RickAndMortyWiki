@@ -22,9 +22,7 @@ interface IEpisodeCards {
 export const EpisodesCards = memo(({ currentEpisodePage }: IEpisodeCards) => {
   const dispatch = useDispatch();
 
-  const { episode } = useSelector(getSerialState);
-
-  console.log(episode);
+  const { episodes } = useSelector(getSerialState);
 
   useEffect(() => {
     dispatch(getEpisodesAction(currentEpisodePage));
@@ -32,13 +30,13 @@ export const EpisodesCards = memo(({ currentEpisodePage }: IEpisodeCards) => {
 
   return (
     <div className="episodes-cards-wrapper">
-      {episode?.map((episode) => (
-        <div key={episode.id}>
-          <Link className="for-link" to={"/episode/" + episode.id}>
+      {episodes?.map((episodes) => (
+        <div key={episodes.id}>
+          <Link className="for-link" to={"/episode/" + episodes.id}>
             <div className="episodes-card">
-              <EpisodeName name={episode.name} />
-              <EpisodeAirData air_date={episode.air_date} />
-              <EpisodeNumber number={episode.episode} />
+              <EpisodeName name={episodes.name} />
+              <EpisodeAirData air_date={episodes.air_date} />
+              <EpisodeNumber number={episodes.episode} />
             </div>
           </Link>
         </div>

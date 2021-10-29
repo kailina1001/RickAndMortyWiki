@@ -15,8 +15,7 @@ interface IMainCharacter {
 
 export const MainCharactersList = memo(({ mainCharacter }: IMainCharacter) => {
   const dispatch = useDispatch();
-  const { character } = useSelector(getSerialState);
-  console.log(character);
+  const { characters } = useSelector(getSerialState);
 
   useEffect(() => {
     dispatch(getCharacterAction(mainCharacter));
@@ -24,14 +23,14 @@ export const MainCharactersList = memo(({ mainCharacter }: IMainCharacter) => {
 
   return (
     <div className="main-characters-cards">
-      {character
-        ?.map((character) => (
-          <div key={character.id}>
-            <Link className="for-link" to={"/character/" + character.id}>
+      {characters
+        ?.map((characters) => (
+          <div key={characters.id}>
+            <Link className="for-link" to={"/character/" + characters.id}>
               <div className="some-card">
-                <CharacterImg image={character.image} />
-                <CharacterName name={character.name} />
-                <CharacterSpecies species={character.species} />
+                <CharacterImg image={characters.image} />
+                <CharacterName name={characters.name} />
+                <CharacterSpecies species={characters.species} />
               </div>
             </Link>
           </div>
