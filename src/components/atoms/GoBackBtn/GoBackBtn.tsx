@@ -2,19 +2,19 @@ import React from "react";
 import { memo } from "react";
 import "./index.css";
 
-interface IGoBackBtn {
+/* interface IGoBackBtn {
   onClick: () => void;
-}
+} */
 
-export const GoBackBtn = memo(({ onClick }: IGoBackBtn) => {
+/* export const GoBackBtn = memo(({ onClick }: IGoBackBtn) => {
   return (
     <button type="submit" className="selected-btn" onClick={() => onClick()}>
       Go back
     </button>
   );
-});
+}); */
 
-/* export const GoBackBtn = memo(() => {
+export const GoBackBtn = memo(() => {
   function goBack() {
     window.history.back();
   }
@@ -23,4 +23,4 @@ export const GoBackBtn = memo(({ onClick }: IGoBackBtn) => {
       Go back
     </button>
   );
-}); */
+});

@@ -1,0 +1,14 @@
+.selected-btn-error {
+  margin-bottom: 30px;
+  width: 230px;
+  height: 75px;
+  background: #dcf8cf;
+  border: 3px solid #006d7c;
+  border-radius: 50px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 1.75;
+  color: #006d7c;
+}

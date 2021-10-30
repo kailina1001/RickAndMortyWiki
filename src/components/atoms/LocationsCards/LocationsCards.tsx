@@ -1,13 +1,7 @@
 import * as React from "react";
 import { memo, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import { getLocationAction } from "../../../core/actions";
 import { getSerialState } from "../../../core/selectors/serialSelector";
 import { LocationDimension } from "../LocationDimension";
@@ -21,10 +15,9 @@ interface ILocationsCards {
 
 export const LocationsCards = memo(
   ({ currentLocationPage }: ILocationsCards) => {
-    const dispatch = useDispatch();
-
     const { locations } = useSelector(getSerialState);
 
+    const dispatch = useDispatch();
     useEffect(() => {
       dispatch(getLocationAction(currentLocationPage));
     }, [dispatch, currentLocationPage]);
@@ -36,7 +29,6 @@ export const LocationsCards = memo(
             <Link className="for-link" to={"/location/" + locations.id}>
               <div className="locations-card">
                 <LocationName name={locations.name} />
-                <LocationDimension dimension={locations.dimension} />
                 <LocationType type={locations.type} />
               </div>
             </Link>

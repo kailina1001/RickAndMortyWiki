@@ -23,7 +23,7 @@ export const SelectedEpisode = memo(() => {
         mainBlock={
           <div className="container selected-episode-wrapper">
             <div className="selected-episode-header">
-              <GoBackBtn onClick={goBackBtn} />
+              <GoBackBtn />
               <div>
                 <div className="selected-episode-name">Pilot</div>
                 <div className="selected-episode-date">

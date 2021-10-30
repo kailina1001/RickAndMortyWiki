@@ -26,7 +26,7 @@ export const SelectedLocation = memo(() => {
         mainBlock={
           <div className="container selected-location-wrapper">
             <div className="selected-location-header">
-              <GoBackBtn onClick={goBackBtn} />
+              <GoBackBtn />
               <div>
                 <div className="selected-location-name">
                   Earth (Replacement Dimension)

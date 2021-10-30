@@ -15,10 +15,9 @@ interface ICharactersCard {
 
 export const CharactersCard = memo(
   ({ currentCharacterPage }: ICharactersCard) => {
-    const dispatch = useDispatch();
-
     const { characters } = useSelector(getSerialState);
 
+    const dispatch = useDispatch();
     useEffect(() => {
       dispatch(getCharacterAction(currentCharacterPage));
     }, [dispatch, currentCharacterPage]);

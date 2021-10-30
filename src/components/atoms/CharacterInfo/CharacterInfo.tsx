@@ -6,12 +6,7 @@ import {
   IEpisodeCharacter,
   ILocationCharacter,
 } from "../../../types/character";
-import { url } from "inspector";
 import loading from "../../images/loading.gif";
-import { useSelector } from "react-redux";
-import { getSerialState } from "../../../core/selectors/serialSelector";
-import { setEpisodesAction } from "../../../core";
-import { spawn } from "child_process";
 
 interface ICharaterInfo {
   gender: string;
@@ -35,7 +30,7 @@ export const CharacterInfo = memo(
     episode,
     character,
   }: ICharaterInfo) => {
-    const [error, setError] = useState(null);
+    /*     const [error, setError] = useState(null); */
     const [isLoaded, setIsLoaded] = useState(false);
     let [names, setNames] = useState("");
     let [episodeNum, setEpisodeNum] = useState("");
@@ -52,11 +47,11 @@ export const CharacterInfo = memo(
               setEpisodeNum((episodeNum += "&" + result.episode));
               setEpisodeDate((episodeDate += "&" + result.air_date));
               setEpisodeId((episodeId += "&" + result.id));
-            },
-            (error) => {
+            }
+            /*   (error) => {
               setIsLoaded(true);
               setError(error);
-            }
+            } */
           )
       );
     }, []);
@@ -68,11 +63,10 @@ export const CharacterInfo = memo(
         .slice(1);
       return newArray;
     }
-    console.log(createArray(names));
     return (
       <div className="selected-character-info">
         <div className="character-information">
-          <h3 className="character-info-title">Informations</h3>
+          <h3 className="character-info-title">Information</h3>
           <dl className="character-info-list">
             <dt>Gender</dt>
             <dd>{gender}</dd>
@@ -121,9 +115,3 @@ export const CharacterInfo = memo(
     );
   }
 );
-
-{
-  /* <Link className="for-link" to={`/episode/`}>
-                  <h1>{selectedEpisode.name}</h1>
-                </Link> */
-}
