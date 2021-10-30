@@ -69,6 +69,7 @@ function* getEpisodeSaga({ payload: currentEpisodePage }: Action<number>) {
       EpisodeService.getEpisode(currentEpisodePage)
     );
     yield put(setEpisodesAction(data.data.results));
+    console.log(data.data.results);
   } catch (e: any) {
     yield put(setSerialErrorAction("Episode not found"));
   }
@@ -79,7 +80,8 @@ function* getSelectedEpisodeSaga({ payload: id }: Action<number>) {
     const data: { data: any } = yield call(() =>
       EpisodeService.getSelectedEpisode(id)
     );
-    yield put(setSelectedEpisodesAction(data.data.results));
+    yield put(setSelectedEpisodesAction(data.data));
+    //!! удалила result
   } catch (e: any) {
     yield put(setSerialErrorAction("Selected episode not found"));
   }

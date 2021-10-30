@@ -70,7 +70,45 @@ dd {
 .selected-character-info {
   display: flex;
   justify-content: space-around;
+  max-height: 350px;
 }
 
-.character-episodes-card {
+.character-episode-list {
+  max-width: 100%;
+  min-width: 380px;
+  overflow: scroll;
+  font-family: "Roboto";
+}
+.character-episode-item {
+  padding: 10px 15px;
+  position: relative;
+}
+.character-episode-item-title {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #081f32;
+}
+.character-episode-item-text {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #6e798c;
+}
+.arrow-link {
+  position: relative;
+}
+.arrow-link::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  background: url(../../../images/arrow-link.png) no-repeat;
+}
+.arrow-link:hover {
+  background-color: #dcf8cf;
 }

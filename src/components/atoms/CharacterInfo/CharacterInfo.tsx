@@ -1,11 +1,17 @@
 import * as React from "react";
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import "./index.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import {
   IEpisodeCharacter,
   ILocationCharacter,
 } from "../../../types/character";
+import { url } from "inspector";
+import loading from "../../images/loading.gif";
+import { useSelector } from "react-redux";
+import { getSerialState } from "../../../core/selectors/serialSelector";
+import { setEpisodesAction } from "../../../core";
+import { spawn } from "child_process";
 
 interface ICharaterInfo {
   gender: string;
@@ -29,6 +35,40 @@ export const CharacterInfo = memo(
     episode,
     character,
   }: ICharaterInfo) => {
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    let [names, setNames] = useState("");
+    let [episodeNum, setEpisodeNum] = useState("");
+    let [episodeDate, setEpisodeDate] = useState("");
+    let [episodeId, setEpisodeId] = useState("");
+    useEffect(() => {
+      episode.map((item) =>
+        fetch(item)
+          .then((res) => res.json())
+          .then(
+            (result) => {
+              setIsLoaded(true);
+              setNames((names += "&" + result.name));
+              setEpisodeNum((episodeNum += "&" + result.episode));
+              setEpisodeDate((episodeDate += "&" + result.air_date));
+              setEpisodeId((episodeId += "&" + result.id));
+            },
+            (error) => {
+              setIsLoaded(true);
+              setError(error);
+            }
+          )
+      );
+    }, []);
+
+    function createArray(str: string) {
+      let newArray = str
+        .split("&")
+        .filter((item, index, arr) => arr.indexOf(item) == index)
+        .slice(1);
+      return newArray;
+    }
+    console.log(createArray(names));
     return (
       <div className="selected-character-info">
         <div className="character-information">
@@ -44,23 +84,46 @@ export const CharacterInfo = memo(
             <dd> {origin.name}</dd>
             <dt>Type</dt>
             <dd>{type}</dd>
-            <Link className="for-link" to={"/location"}>
-              <dt>Location</dt>
-              <dd>{location.name}</dd>
-            </Link>
+            <div className="arrow-link">
+              <Link className="for-link" to={"/location"}>
+                <dt>Location</dt>
+                <dd>{location.name}</dd>
+              </Link>
+            </div>
           </dl>
         </div>
         <div className="character-episodes">
           <h3 className="character-episode-title">Episodes</h3>
-          <dl className="character-episode-list">
-            <Link className="for-link" to={`/episode/${character.id}`}>
-              {/* //!!!!!!!!выдаёт id персонажа, а не эпизода */}
-              <dt>Episodes</dt>
-              <dd className="character-episodes-card"> {episode}</dd>
-            </Link>
-          </dl>
+          <div className="character-episode-list">
+            {episode.map((item, index) => {
+              return (
+                <div className="character-episode-item arrow-link">
+                  <Link
+                    className="for-link"
+                    to={`/episode/${createArray(episodeId)[index]}`}
+                  >
+                    <h2 className="character-episode-item-title">
+                      {createArray(episodeNum)[index]}
+                    </h2>
+                    <p className="character-episode-item-text">
+                      {createArray(names)[index]}
+                    </p>
+                    <p className="character-episode-item-text">
+                      {createArray(episodeDate)[index]}
+                    </p>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     );
   }
 );
+
+{
+  /* <Link className="for-link" to={`/episode/`}>
+                  <h1>{selectedEpisode.name}</h1>
+                </Link> */
+}

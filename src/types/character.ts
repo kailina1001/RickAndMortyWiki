@@ -1,5 +1,3 @@
-/* import { IEpisode } from "../types/episode"; */
-
 export interface IСharacter {
   id: number;
   name: string;
