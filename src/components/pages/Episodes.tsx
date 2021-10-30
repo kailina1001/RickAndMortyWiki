@@ -11,16 +11,15 @@ import { getSerialState } from "../../core/selectors/serialSelector";
 import { PagesBtn } from "../atoms/PagesBtn";
 
 export const Episodes = memo(() => {
+  const { currentEpisodePage } = useSelector(getSerialState);
+
+  const dispatch = useDispatch();
   const nextLocationPage = () => {
     dispatch(setCurrentEpisodePageAction(currentEpisodePage + 1));
   };
   const prevLocationPage = () => {
     dispatch(setCurrentEpisodePageAction(currentEpisodePage - 1));
   };
-
-  const { currentEpisodePage } = useSelector(getSerialState);
-
-  const dispatch = useDispatch();
 
   return (
     <div>

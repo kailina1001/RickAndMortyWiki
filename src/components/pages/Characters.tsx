@@ -11,16 +11,15 @@ import { setCurrentCharacterPageAction } from "../../core/actions";
 import { PagesBtn } from "../atoms/PagesBtn";
 
 export const Characters = memo(() => {
+  const { currentCharacterPage } = useSelector(getSerialState);
+
+  const dispatch = useDispatch();
   const nextCharacterPage = () => {
     dispatch(setCurrentCharacterPageAction(currentCharacterPage + 1));
   };
   const prevCharacterPage = () => {
     dispatch(setCurrentCharacterPageAction(currentCharacterPage - 1));
   };
-
-  const dispatch = useDispatch();
-
-  const { currentCharacterPage } = useSelector(getSerialState);
 
   return (
     <div>

@@ -474,10 +474,9 @@ textarea {
 
 /* ---------------------------------------Selected Character---------------------------------------------- */
 
-.selected-character-wrapper {
+/* .selected-character-wrapper {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   margin-bottom: 100px;
   max-width: 100%;
   margin-left: 220px;
@@ -498,16 +497,10 @@ textarea {
   position: relative;
 }
 
-.character-pic {
-  margin: 0 auto;
-  width: 170px;
-  height: 170px;
-}
-
 .selected-character-info {
   display: flex;
   justify-content: space-around;
-}
+} */
 
 /* ---------------------------------------Selected Location----------------------------------------------- */
 
@@ -674,4 +667,13 @@ textarea {
   text-align: start;
 }
 
-/* ---------------------------------------....................------------------------------------------------ */
+/* ---------------------------------------Error page------------------------------------------------ */
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-page-pic {
+  border-radius: 50px;
+}

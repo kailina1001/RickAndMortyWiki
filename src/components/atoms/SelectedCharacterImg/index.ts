@@ -1,0 +1,1 @@
+export { SelectedCharacterImg } from "./SelectedCharacterImg";

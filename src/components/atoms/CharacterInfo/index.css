@@ -1,7 +1,7 @@
 .character-information {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
 }
 
 .character-info-title {
@@ -11,7 +11,7 @@
   font-size: 18px;
   line-height: 1.75;
   display: flex;
-  align-items: center;
+  align-items: left;
   letter-spacing: 0.15px;
   color: #8e8e93;
   margin-bottom: 15px;
@@ -48,6 +48,67 @@ dd {
   margin-bottom: 10px;
 }
 
-/* .character-info-list a {
-  border: 1px solid #ff81f9;
-} */
+.character-episodes {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.character-episode-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.75;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.15px;
+  color: #8e8e93;
+  margin-bottom: 15px;
+}
+
+.selected-character-info {
+  display: flex;
+  justify-content: space-around;
+  max-height: 350px;
+}
+
+.character-episode-list {
+  max-width: 100%;
+  min-width: 380px;
+  overflow: auto;
+  font-family: "Roboto";
+}
+.character-episode-item {
+  padding: 10px 15px;
+  position: relative;
+}
+.character-episode-item-title {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #081f32;
+}
+.character-episode-item-text {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #6e798c;
+}
+.arrow-link {
+  position: relative;
+}
+.arrow-link::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  background: url(../../../images/arrow-link.png) no-repeat;
+}
+.arrow-link:hover {
+  background-color: #dcf8cf;
+}

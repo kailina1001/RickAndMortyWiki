@@ -1,13 +1,7 @@
 import * as React from "react";
 import { memo, useEffect } from "react";
 import "./index.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import { CharacterName } from "../CharacterName";
 import { CharacterImg } from "../CharacterImg";
 import { CharacterSpecies } from "../CharacterSpecies";
@@ -21,23 +15,22 @@ interface ICharactersCard {
 
 export const CharactersCard = memo(
   ({ currentCharacterPage }: ICharactersCard) => {
+    const { characters } = useSelector(getSerialState);
+
     const dispatch = useDispatch();
-
-    const { character } = useSelector(getSerialState);
-
     useEffect(() => {
       dispatch(getCharacterAction(currentCharacterPage));
     }, [dispatch, currentCharacterPage]);
 
     return (
       <div className="characters-cards-wrapper">
-        {character?.map((character) => (
-          <div key={character.id}>
-            <Link className="for-link" to={"/character/" + character.id}>
+        {characters?.map((characters) => (
+          <div key={characters.id}>
+            <Link className="for-link" to={`/character/${characters.id}`}>
               <div className="character-card">
-                <CharacterImg image={character.image} />
-                <CharacterName name={character.name} />
-                <CharacterSpecies species={character.species} />
+                <CharacterImg image={characters.image} />
+                <CharacterName name={characters.name} />
+                <CharacterSpecies species={characters.species} />
               </div>
             </Link>
           </div>
@@ -46,3 +39,5 @@ export const CharactersCard = memo(
     );
   }
 );
+
+/* "/character/" + character.id  on 36str*/

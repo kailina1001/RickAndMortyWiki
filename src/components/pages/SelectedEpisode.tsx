@@ -5,8 +5,18 @@ import { GoBackBtn } from "../atoms/GoBackBtn";
 import { CastCards } from "../atoms/CastCards";
 import { DescriptionTitle } from "../atoms/DescriptionTitle";
 import { DescriptionText } from "../atoms/DescriptionText";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { getSerialState } from "../../core/selectors/serialSelector";
 
 export const SelectedEpisode = memo(() => {
+  /*  const { selectedEpisode } = useSelector(getSerialState); */
+
+  const history = useHistory();
+  const goBackBtn = () => {
+    history.push("/episodes");
+  };
+
   return (
     <div>
       <MainTemplate

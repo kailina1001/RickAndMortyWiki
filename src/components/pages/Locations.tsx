@@ -11,16 +11,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { getSerialState } from "../../core/selectors/serialSelector";
 
 export const Locations = memo(() => {
+  const { currentLocationPage } = useSelector(getSerialState);
+
+  const dispatch = useDispatch();
   const nextLocationPage = () => {
     dispatch(setCurrentLocationPageAction(currentLocationPage + 1));
   };
   const prevLocationPage = () => {
     dispatch(setCurrentLocationPageAction(currentLocationPage - 1));
   };
-
-  const { currentLocationPage } = useSelector(getSerialState);
-
-  const dispatch = useDispatch();
 
   return (
     <div>

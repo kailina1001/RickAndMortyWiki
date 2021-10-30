@@ -1,18 +1,12 @@
 import React from "react";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { PublicRoute } from "./router/PublicRoute";
 import { Home } from "./components/pages/Main";
 import { Characters } from "./components/pages/Characters";
 import { Locations } from "./components/pages/Locations";
 import { Episodes } from "./components/pages/Episodes";
-import { SelectedCharacter } from "./components/pages/SelectedCharacter";
+import { SelectedCharacterPage } from "./components/pages/SelectedCharacterPage";
 import { SelectedLocation } from "./components/pages/SelectedLocation";
 import { SelectedEpisode } from "./components/pages/SelectedEpisode";
 import { ErrorPage } from "./components/pages/ErrorPage";
@@ -26,7 +20,7 @@ function App() {
         <PublicRoute component={Locations} path="/locations" exact />
         <PublicRoute component={Episodes} path="/episodes" exact />
         <PublicRoute
-          component={SelectedCharacter}
+          component={SelectedCharacterPage}
           path="/character/:id"
           exact
         />
