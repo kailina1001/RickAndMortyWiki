@@ -11,6 +11,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getSerialState } from "../../core/selectors/serialSelector";
 
 export const Locations = memo(() => {
+  const { currentLocationPage } = useSelector(getSerialState);
+
+  const dispatch = useDispatch();
   const nextLocationPage = () => {
     dispatch(setCurrentLocationPageAction(currentLocationPage + 1));
   };
@@ -18,9 +21,22 @@ export const Locations = memo(() => {
     dispatch(setCurrentLocationPageAction(currentLocationPage - 1));
   };
 
-  const { currentLocationPage } = useSelector(getSerialState);
-
-  const dispatch = useDispatch();
+  function checkPage(currPage: any, direction: string) {
+    const prevbtn = document.querySelector(".previous-btn");
+    const nextbtn = document.querySelector(".next-btn");
+    if (currPage - 1 == 1) {
+      direction == "prev"
+        ? ((prevbtn as HTMLElement).style.display = "none")
+        : ((prevbtn as HTMLElement).style.display = "block");
+    } else if (currPage + 1 == 6) {
+      direction == "next"
+        ? ((nextbtn as HTMLElement).style.display = "none")
+        : ((nextbtn as HTMLElement).style.display = "block");
+    } else {
+      (prevbtn as HTMLElement).style.display = "block";
+      (nextbtn as HTMLElement).style.display = "block";
+    }
+  }
 
   return (
     <div>
@@ -35,8 +51,22 @@ export const Locations = memo(() => {
               <LocationsFilter />
               <LocationsCards currentLocationPage={currentLocationPage} />
               <div className="pages-btn">
-                <PagesBtn title={"Previous"} onClickPage={prevLocationPage} />
-                <PagesBtn title={"Next"} onClickPage={nextLocationPage} />
+                <PagesBtn
+                  title={"Previous"}
+                  onClickPage={() => {
+                    checkPage(currentLocationPage, "prev");
+                    prevLocationPage();
+                  }}
+                  btnClassName={"previous-btn"}
+                />
+                <PagesBtn
+                  title={"Next"}
+                  onClickPage={() => {
+                    checkPage(currentLocationPage, "next");
+                    nextLocationPage();
+                  }}
+                  btnClassName={"next-btn"}
+                />
               </div>
             </div>
           </div>

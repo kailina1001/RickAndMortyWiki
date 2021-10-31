@@ -11,16 +11,32 @@ import { getSerialState } from "../../core/selectors/serialSelector";
 import { PagesBtn } from "../atoms/PagesBtn";
 
 export const Episodes = memo(() => {
-  const nextLocationPage = () => {
-    dispatch(setCurrentEpisodePageAction(currentEpisodePage + 1));
-  };
-  const prevLocationPage = () => {
-    dispatch(setCurrentEpisodePageAction(currentEpisodePage - 1));
-  };
-
   const { currentEpisodePage } = useSelector(getSerialState);
 
   const dispatch = useDispatch();
+  const nextEpisodePage = () => {
+    dispatch(setCurrentEpisodePageAction(currentEpisodePage + 1));
+  };
+  const prevEpisodePage = () => {
+    dispatch(setCurrentEpisodePageAction(currentEpisodePage - 1));
+  };
+
+  function checkPage(currPage: any, direction: string) {
+    const prevbtn = document.querySelector(".previous-btn");
+    const nextbtn = document.querySelector(".next-btn");
+    if (currPage - 1 == 1) {
+      direction == "prev"
+        ? ((prevbtn as HTMLElement).style.display = "none")
+        : ((prevbtn as HTMLElement).style.display = "block");
+    } else if (currPage + 1 == 3) {
+      direction == "next"
+        ? ((nextbtn as HTMLElement).style.display = "none")
+        : ((nextbtn as HTMLElement).style.display = "block");
+    } else {
+      (prevbtn as HTMLElement).style.display = "block";
+      (nextbtn as HTMLElement).style.display = "block";
+    }
+  }
 
   return (
     <div>
@@ -35,8 +51,22 @@ export const Episodes = memo(() => {
               <EpisodeSearch />
               <EpisodesCards currentEpisodePage={currentEpisodePage} />
               <div className="pages-btn">
-                <PagesBtn title={"Previous"} onClickPage={prevLocationPage} />
-                <PagesBtn title={"Next"} onClickPage={nextLocationPage} />
+                <PagesBtn
+                  title={"Previous"}
+                  onClickPage={() => {
+                    checkPage(currentEpisodePage, "prev");
+                    prevEpisodePage();
+                  }}
+                  btnClassName={"previous-btn"}
+                />
+                <PagesBtn
+                  title={"Next"}
+                  onClickPage={() => {
+                    checkPage(currentEpisodePage, "next");
+                    nextEpisodePage();
+                  }}
+                  btnClassName={"next-btn"}
+                />
               </div>
             </div>
           </div>

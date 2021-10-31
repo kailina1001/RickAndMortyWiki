@@ -10,5 +10,16 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 1.75;
-  color: #006d7c;
+  color: #fff;
+}
+
+.active {
+  background: #006d7c;
+}
+
+.active:hover {
+  background: #6060b6;
+}
+.previous-btn {
+  display: none;
 }

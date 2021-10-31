@@ -11,6 +11,9 @@ import { setCurrentCharacterPageAction } from "../../core/actions";
 import { PagesBtn } from "../atoms/PagesBtn";
 
 export const Characters = memo(() => {
+  const { currentCharacterPage } = useSelector(getSerialState);
+
+  const dispatch = useDispatch();
   const nextCharacterPage = () => {
     dispatch(setCurrentCharacterPageAction(currentCharacterPage + 1));
   };
@@ -18,9 +21,22 @@ export const Characters = memo(() => {
     dispatch(setCurrentCharacterPageAction(currentCharacterPage - 1));
   };
 
-  const dispatch = useDispatch();
-
-  const { currentCharacterPage } = useSelector(getSerialState);
+  function checkPage(currPage: any, direction: string) {
+    const prevbtn = document.querySelector(".previous-btn");
+    const nextbtn = document.querySelector(".next-btn");
+    if (currPage - 1 == 1) {
+      direction == "prev"
+        ? ((prevbtn as HTMLElement).style.display = "none")
+        : ((prevbtn as HTMLElement).style.display = "block");
+    } else if (currPage + 1 == 34) {
+      direction == "next"
+        ? ((nextbtn as HTMLElement).style.display = "none")
+        : ((nextbtn as HTMLElement).style.display = "block");
+    } else {
+      (prevbtn as HTMLElement).style.display = "block";
+      (nextbtn as HTMLElement).style.display = "block";
+    }
+  }
 
   return (
     <div>
@@ -35,8 +51,22 @@ export const Characters = memo(() => {
               <CharactersFilter />
               <CharactersCard currentCharacterPage={currentCharacterPage} />
               <div className="pages-btn">
-                <PagesBtn title={"Previous"} onClickPage={prevCharacterPage} />
-                <PagesBtn title={"Next"} onClickPage={nextCharacterPage} />
+                <PagesBtn
+                  title={"Previous"}
+                  onClickPage={() => {
+                    checkPage(currentCharacterPage, "prev");
+                    prevCharacterPage();
+                  }}
+                  btnClassName={"previous-btn"}
+                />
+                <PagesBtn
+                  title={"Next"}
+                  onClickPage={() => {
+                    checkPage(currentCharacterPage, "next");
+                    nextCharacterPage();
+                  }}
+                  btnClassName={"next-btn"}
+                />
               </div>
             </div>
           </div>
