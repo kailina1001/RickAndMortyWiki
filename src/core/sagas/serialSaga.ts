@@ -34,7 +34,6 @@ function* getSelectedCharacterSaga({ payload: id }: Action<number>) {
     );
 
     yield put(setSelectedCharacterAction(data.data));
-    console.log(data.data);
     //!!!!!!!!!!!!!!!!!нет result!
   } catch (e: any) {
     yield put(setSerialErrorAction("Selected character not found"));
@@ -57,7 +56,8 @@ function* getSelectedLocationSaga({ payload: id }: Action<number>) {
     const data: { data: any } = yield call(() =>
       LocationService.getSelectedLocation(id)
     );
-    yield put(setSelectedLocationAction(data.data.results));
+    yield put(setSelectedLocationAction(data.data));
+    //!!!!!!!!!!!!!!!!!нет result!
   } catch (e: any) {
     yield put(setSerialErrorAction("Selected location not found"));
   }

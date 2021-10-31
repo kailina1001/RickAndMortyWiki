@@ -6,12 +6,7 @@ import {
   IEpisodeCharacter,
   ILocationCharacter,
 } from "../../../types/character";
-import { url } from "inspector";
 import loading from "../../images/loading.gif";
-import { useSelector } from "react-redux";
-import { getSerialState } from "../../../core/selectors/serialSelector";
-import { setEpisodesAction } from "../../../core";
-import { spawn } from "child_process";
 
 interface ICharaterInfo {
   gender: string;
@@ -68,11 +63,10 @@ export const CharacterInfo = memo(
         .slice(1);
       return newArray;
     }
-    console.log(createArray(names));
     return (
       <div className="selected-character-info">
         <div className="character-information">
-          <h3 className="character-info-title">Informations</h3>
+          <h3 className="character-info-title">Information</h3>
           <dl className="character-info-list">
             <dt>Gender</dt>
             <dd>{gender}</dd>
@@ -85,7 +79,7 @@ export const CharacterInfo = memo(
             <dt>Type</dt>
             <dd>{type}</dd>
             <div className="arrow-link">
-              <Link className="for-link" to={"/location"}>
+              <Link className="for-link" to={"/location/"}>
                 <dt>Location</dt>
                 <dd>{location.name}</dd>
               </Link>
@@ -121,9 +115,3 @@ export const CharacterInfo = memo(
     );
   }
 );
-
-{
-  /* <Link className="for-link" to={`/episode/`}>
-                  <h1>{selectedEpisode.name}</h1>
-                </Link> */
-}

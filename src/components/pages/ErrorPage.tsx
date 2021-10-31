@@ -8,6 +8,7 @@ import { AboutSeries } from "../atoms/AboutSeries";
 import { MainCharactersList } from "../atoms/MainCharactersList";
 import errorImg from "../../images/error-page.gif";
 import { ErrorTitle } from "../atoms/ErrorTitle";
+import { GoBackErrorBtn } from "../atoms/GoBackErrorBtn";
 
 export const ErrorPage = memo(() => {
   return (
@@ -15,6 +16,7 @@ export const ErrorPage = memo(() => {
       <MainTemplate
         mainBlock={
           <div className="error-page">
+            <GoBackErrorBtn />
             <ErrorTitle title={"Not Found"} />
             <img src={errorImg} className="error-page-pic" />
           </div>

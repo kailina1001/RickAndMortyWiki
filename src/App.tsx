@@ -7,8 +7,8 @@ import { Characters } from "./components/pages/Characters";
 import { Locations } from "./components/pages/Locations";
 import { Episodes } from "./components/pages/Episodes";
 import { SelectedCharacterPage } from "./components/pages/SelectedCharacterPage";
-import { SelectedLocation } from "./components/pages/SelectedLocation";
-import { SelectedEpisode } from "./components/pages/SelectedEpisode";
+import { SelectedLocationPage } from "./components/pages/SelectedLocationPage";
+import { SelectedEpisodePage } from "./components/pages/SelectedEpisodePage";
 import { ErrorPage } from "./components/pages/ErrorPage";
 
 function App() {
@@ -24,8 +24,16 @@ function App() {
           path="/character/:id"
           exact
         />
-        <PublicRoute component={SelectedLocation} path="/location/:id" exact />
-        <PublicRoute component={SelectedEpisode} path="/episode/:id" exact />
+        <PublicRoute
+          component={SelectedLocationPage}
+          path="/location/:id"
+          exact
+        />
+        <PublicRoute
+          component={SelectedEpisodePage}
+          path="/episode/:id"
+          exact
+        />
         <PublicRoute component={ErrorPage} exact />
       </Switch>
     </div>

@@ -504,10 +504,9 @@ textarea {
 
 /* ---------------------------------------Selected Location----------------------------------------------- */
 
-.selected-location-wrapper {
+/* .selected-location-wrapper {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   margin-bottom: 100px;
   max-width: 100%;
   margin-left: 220px;
@@ -584,7 +583,7 @@ textarea {
   letter-spacing: 0.15px;
   color: #8e8e93;
   text-align: start;
-}
+} */
 
 /* ---------------------------------------Selected Episode------------------------------------------------ */
 

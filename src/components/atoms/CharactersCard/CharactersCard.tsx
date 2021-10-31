@@ -40,5 +40,3 @@ export const CharactersCard = memo(
     );
   }
 );
-
-/* "/character/" + character.id  on 36str*/

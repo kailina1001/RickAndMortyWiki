@@ -9,13 +9,13 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getSerialState } from "../../core/selectors/serialSelector";
 
-export const SelectedEpisode = memo(() => {
+export const SelectedEpisodePage = memo(() => {
   /*  const { selectedEpisode } = useSelector(getSerialState); */
 
-  const history = useHistory();
+  /*  const history = useHistory();
   const goBackBtn = () => {
     history.push("/episodes");
-  };
+  }; */
 
   return (
     <div>
@@ -23,7 +23,7 @@ export const SelectedEpisode = memo(() => {
         mainBlock={
           <div className="container selected-episode-wrapper">
             <div className="selected-episode-header">
-              <GoBackBtn onClick={goBackBtn} />
+              <GoBackBtn />
               <div>
                 <div className="selected-episode-name">Pilot</div>
                 <div className="selected-episode-date">

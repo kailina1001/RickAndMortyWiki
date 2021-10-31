@@ -76,7 +76,7 @@ dd {
 .character-episode-list {
   max-width: 100%;
   min-width: 380px;
-  overflow: scroll;
+  overflow: auto;
   font-family: "Roboto";
 }
 .character-episode-item {

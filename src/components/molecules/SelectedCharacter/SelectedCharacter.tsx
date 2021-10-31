@@ -1,31 +1,18 @@
 import * as React from "react";
 import { memo } from "react";
 import "./index.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  useHistory,
-} from "react-router-dom";
+import { BrowserRouter as Router, useHistory } from "react-router-dom";
 import { GoBackBtn } from "../../atoms/GoBackBtn";
 import { SelectedCharacterImg } from "../../atoms/SelectedCharacterImg";
 import { Title } from "../../atoms/Title";
 import { CharacterInfo } from "../../atoms/CharacterInfo";
-
 import { IСharacter } from "../../../types/character";
 
 export const SelectedCharacter = memo((character: IСharacter) => {
-  const history = useHistory();
-  const goBackBtn = () => {
-    history.push("/characters");
-  };
-
   return (
     <div className="selected-character-wrapper">
       <div className="selected-character-header">
-        <GoBackBtn onClick={goBackBtn} />
+        <GoBackBtn />
         <SelectedCharacterImg image={character.image} />
       </div>
       <div>
