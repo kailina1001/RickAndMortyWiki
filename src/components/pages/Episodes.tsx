@@ -24,14 +24,12 @@ export const Episodes = memo(() => {
   function checkPage(currPage: any, direction: string) {
     const prevbtn = document.querySelector(".previous-btn");
     const nextbtn = document.querySelector(".next-btn");
-    if (currPage - 1 == 1) {
-      direction == "prev"
-        ? ((prevbtn as HTMLElement).style.display = "none")
-        : ((prevbtn as HTMLElement).style.display = "block");
-    } else if (currPage + 1 == 3) {
-      direction == "next"
-        ? ((nextbtn as HTMLElement).style.display = "none")
-        : ((nextbtn as HTMLElement).style.display = "block");
+    if (currPage == 2) {
+      if (direction == "prev") {
+        (prevbtn as HTMLElement).style.display = "none";
+      } else {
+        (nextbtn as HTMLElement).style.display = "none";
+      }
     } else {
       (prevbtn as HTMLElement).style.display = "block";
       (nextbtn as HTMLElement).style.display = "block";
