@@ -1,0 +1,25 @@
+.all-pages-btn {
+  margin-bottom: 50px;
+  width: 120px;
+  height: 35px;
+  background: #fce3fd;
+  border: 1px solid #006d7c;
+  border-radius: 13px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #fff;
+}
+
+.active {
+  background: #006d7c;
+}
+
+.active:hover {
+  background: #6060b6;
+}
+.previous-btn {
+  display: none;
+}

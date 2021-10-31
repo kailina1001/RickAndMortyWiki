@@ -1,0 +1,16 @@
+.selected-episode-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.selected-episode-date {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: start;
+}

@@ -1,0 +1,49 @@
+.selected-location-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.residents-title {
+  margin-bottom: 30px;
+  margin-left: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #8e8e93;
+  text-align: start;
+}
+
+.residents-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.selected-resident-card {
+  margin-left: 0;
+  height: 100%;
+  background: #dcf8cf;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 35px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.75;
+  text-align: left;
+  color: #006d7c;
+  animation: rotateCard 1s linear;
+}
+
+.selected-resident-card-img {
+  border-radius: 20px;
+}

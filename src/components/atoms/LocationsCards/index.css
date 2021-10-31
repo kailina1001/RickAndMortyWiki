@@ -1,0 +1,25 @@
+.locations-card {
+  margin-left: 0;
+  height: 100%;
+  background: #dcf8cf;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 35px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.75;
+  text-align: left;
+  color: #006d7c;
+}
+
+.locations-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}

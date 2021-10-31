@@ -1,0 +1,10 @@
+.location-dimension {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.7);
+  mix-blend-mode: normal;
+}

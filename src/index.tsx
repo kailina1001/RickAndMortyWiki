@@ -1,17 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { CharacterService } from "./services/CharacterService";
+import { EpisodeService } from "./services/EpisodeService";
+import { LocationService } from "./services/LocationService";
+import { Provider } from "react-redux";
+import { store } from "./core/store";
+
+CharacterService.setCredentials({
+  URL: "https://rickandmortyapi.com/api/",
+});
+CharacterService.prefix = "character";
+
+LocationService.setCredentials({
+  URL: "https://rickandmortyapi.com/api/",
+});
+LocationService.prefix = "location";
+
+EpisodeService.setCredentials({
+  URL: "https://rickandmortyapi.com/api/",
+});
+
+EpisodeService.prefix = "episode";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
+  document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

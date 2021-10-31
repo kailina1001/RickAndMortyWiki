@@ -322,4 +322,288 @@ textarea {
   padding: 0.2em 0;
 }
 
-/* ---------------------------------------Reset css------------------------------------------------------- */
+/* ---------------------------------------Reset css(up)------------------------------------------------------- */
+
+/* ---------------------------------------Main Page (down)------------------------------------------------------- */
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin-left: 220px;
+  margin-right: 220px;
+  min-height: 825px;
+  background: #ebebeb;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 13px;
+  padding: 10px 100px 10px 100px;
+}
+
+.main-page-logo-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-page-logo {
+  width: 420px;
+  height: 160px;
+  margin-bottom: 15px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-characters {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin-left: 100px;
+  margin-right: 100px;
+  min-height: 300px;
+}
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+/* ---------------------------------------Characters------------------------------------------------------ */
+
+.characters-page {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-bottom: 100px;
+  max-width: 100%;
+  margin-left: 220px;
+  margin-right: 220px;
+  min-height: 825px;
+  background: #ebebeb;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 13px;
+  padding: 10px 100px 10px 100px;
+}
+
+.characters-page-logo {
+  margin-bottom: 15px;
+  width: 420px;
+  height: 160px;
+}
+
+.characters-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pages-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* ---------------------------------------Locations------------------------------------------------------- */
+
+.locations-page {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-bottom: 100px;
+  max-width: 100%;
+  margin-left: 220px;
+  margin-right: 220px;
+  min-height: 825px;
+  background: #ebebeb;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 13px;
+  padding: 10px 100px 10px 100px;
+}
+
+.locations-page-logo {
+  margin-bottom: 15px;
+  width: 370px;
+  height: 210px;
+}
+
+.locations-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------------------------------------Episodes-------------------------------------------------------- */
+
+.episodes-page {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-bottom: 100px;
+  max-width: 100%;
+  margin-left: 220px;
+  margin-right: 220px;
+  min-height: 825px;
+  background: #ebebeb;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 13px;
+  padding: 10px 100px 10px 100px;
+}
+
+.episodes-page-logo {
+  margin-bottom: 15px;
+  width: 320px;
+  height: 200px;
+}
+
+.episodes-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.episodes-page {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+/* ---------------------------------------Selected Character---------------------------------------------- */
+
+/* .selected-character-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  max-width: 100%;
+  margin-left: 220px;
+  margin-right: 220px;
+  min-height: 825px;
+  background: #ebebeb;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 13px;
+  padding: 30px 100px 10px 100px;
+}
+
+.selected-character-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.selected-character-info {
+  display: flex;
+  justify-content: space-around;
+} */
+
+/* ---------------------------------------Selected Location----------------------------------------------- */
+
+/* .selected-location-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  max-width: 100%;
+  margin-left: 220px;
+  margin-right: 220px;
+  min-height: 825px;
+  background: #ebebeb;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 13px;
+  padding: 30px 100px 10px 100px;
+}
+
+.selected-location-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.selected-location-btn {
+  position: absolute;
+  left: 5px;
+  margin-bottom: 50px;
+  width: 100px;
+  height: 35px;
+  background: #dcf8cf;
+  border: 1px solid #006d7c;
+  border-radius: 13px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #006d7c;
+}
+
+
+
+.selected-location-type {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: start;
+}
+
+.selected-location-name {
+  margin: 0 auto;
+  margin-bottom: 70px;
+  width: 200px;
+  height: 35px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.75;
+  color: #006d7c;
+  text-align: center;
+}
+
+.residents-title {
+  margin-bottom: 30px;
+  margin-left: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #8e8e93;
+  text-align: start;
+} */
+
+/* ---------------------------------------Selected Episode------------------------------------------------ */
+
+.selected-episode-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  width: 100%;
+  min-height: 825px;
+  background: #ebebeb;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 13px;
+  padding: 30px 100px 10px 100px;
+}
+
+/* ---------------------------------------Error page------------------------------------------------ */
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-page-pic {
+  border-radius: 50px;
+}

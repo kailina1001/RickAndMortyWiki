@@ -1,0 +1,1 @@
+export { EpisodeAirData } from "./EpisodeAirData";
