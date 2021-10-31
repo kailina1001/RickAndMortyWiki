@@ -20,7 +20,6 @@ function* getCharacterSaga({ payload: currentCharacterPage }: Action<number>) {
     const data: { data: any } = yield call(() =>
       CharacterService.getCharacter(currentCharacterPage)
     );
-
     yield put(setCharacterAction(data.data.results));
   } catch (e: any) {
     yield put(setSerialErrorAction("Character not found"));
@@ -32,7 +31,6 @@ function* getSelectedCharacterSaga({ payload: id }: Action<number>) {
     const data: { data: any } = yield call(() =>
       CharacterService.getSelectedCharacter(id)
     );
-
     yield put(setSelectedCharacterAction(data.data));
     //!!!!!!!!!!!!!!!!!нет result!
   } catch (e: any) {
@@ -69,7 +67,6 @@ function* getEpisodeSaga({ payload: currentEpisodePage }: Action<number>) {
       EpisodeService.getEpisode(currentEpisodePage)
     );
     yield put(setEpisodesAction(data.data.results));
-    console.log(data.data.results);
   } catch (e: any) {
     yield put(setSerialErrorAction("Episode not found"));
   }
@@ -92,8 +89,6 @@ function* getMainCharacterAction({ payload: mainCharacter }: Action<number>) {
     const data: { data: any } = yield call(() =>
       CharacterService.getCharacter(mainCharacter)
     );
-    console.log(data.data.results);
-
     yield put(setMainCharacterAction(data.data.results));
   } catch (e: any) {
     yield put(setSerialErrorAction("Character not found"));

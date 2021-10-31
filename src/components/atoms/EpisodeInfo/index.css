@@ -1,10 +1,10 @@
-.selected-location-info {
+.selected-episode-info {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.residents-title {
+.cast-title {
   margin-bottom: 30px;
   margin-left: 10px;
   font-family: "Roboto";
@@ -17,14 +17,14 @@
   text-align: start;
 }
 
-.residents-cards-wrapper {
+.cast-cards-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 25px;
   margin-bottom: 60px;
 }
 
-.selected-resident-card {
+.selected-cast-card {
   margin-left: 0;
   height: 100%;
   background: #dcf8cf;
@@ -44,6 +44,6 @@
   animation: rotateCard 1s linear;
 }
 
-.selected-resident-card-img {
+.selected-cast-card-img {
   border-radius: 20px;
 }

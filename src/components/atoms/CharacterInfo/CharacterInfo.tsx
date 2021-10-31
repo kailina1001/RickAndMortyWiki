@@ -63,6 +63,8 @@ export const CharacterInfo = memo(
         .slice(1);
       return newArray;
     }
+    const locationUrl = location.url.slice(32, location.url.length);
+
     return (
       <div className="selected-character-info">
         <div className="character-information">
@@ -79,7 +81,7 @@ export const CharacterInfo = memo(
             <dt>Type</dt>
             <dd>{type}</dd>
             <div className="arrow-link">
-              <Link className="for-link" to={"/location/"}>
+              <Link className="for-link" to={`/${locationUrl}`}>
                 <dt>Location</dt>
                 <dd>{location.name}</dd>
               </Link>

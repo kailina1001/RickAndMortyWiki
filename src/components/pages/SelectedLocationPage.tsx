@@ -21,7 +21,7 @@ export const SelectedLocationPage = memo(() => {
     <div>
       <MainTemplate
         mainBlock={
-          <div className="selected-location-wrapper">
+          <div className="container selected-location-wrapper">
             {selectedLocation && (
               <SelectedLocation
                 key={selectedLocation.id}

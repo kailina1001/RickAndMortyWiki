@@ -544,10 +544,7 @@ textarea {
   color: #006d7c;
 }
 
-.selected-location-info {
-  display: flex;
-  flex-direction: column;
-}
+
 
 .selected-location-type {
   display: flex;
@@ -598,72 +595,6 @@ textarea {
   box-sizing: border-box;
   border-radius: 13px;
   padding: 30px 100px 10px 100px;
-}
-
-.selected-episode-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-}
-
-.selected-episode-btn {
-  position: absolute;
-  left: 5px;
-  margin-bottom: 50px;
-  width: 100px;
-  height: 35px;
-  background: #dcf8cf;
-  border: 1px solid #006d7c;
-  border-radius: 13px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 1.75;
-  color: #006d7c;
-}
-
-.selected-episode-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.selected-episode-date {
-  display: flex;
-  width: 400px;
-  justify-content: space-between;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  text-align: start;
-}
-
-.selected-episode-name {
-  margin: 0 auto;
-  margin-bottom: 50px;
-  width: 200px;
-  height: 35px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 1.75;
-  color: #006d7c;
-  text-align: center;
-}
-
-.cast-title {
-  margin-bottom: 30px;
-  margin-left: 10px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: 0.15px;
-  color: #8e8e93;
-  text-align: start;
 }
 
 /* ---------------------------------------Error page------------------------------------------------ */

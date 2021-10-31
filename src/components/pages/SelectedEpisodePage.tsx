@@ -1,47 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { memo } from "react";
 import { MainTemplate } from "../template/MainTemplate";
-import { GoBackBtn } from "../atoms/GoBackBtn";
-import { CastCards } from "../atoms/CastCards";
-import { DescriptionTitle } from "../atoms/DescriptionTitle";
-import { DescriptionText } from "../atoms/DescriptionText";
-import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { getSerialState } from "../../core/selectors/serialSelector";
+import { SelectedEpisode } from "../molecules/SelectedEpisode";
+import { getSelectedEpisodesAction } from "../../core";
 
 export const SelectedEpisodePage = memo(() => {
-  /*  const { selectedEpisode } = useSelector(getSerialState); */
+  const params = useParams() as any;
+  const { selectedEpisode } = useSelector(getSerialState) as any;
+  console.log(selectedEpisode);
 
-  /*  const history = useHistory();
-  const goBackBtn = () => {
-    history.push("/episodes");
-  }; */
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getSelectedEpisodesAction(params.id));
+  }, [dispatch, params.id]);
 
   return (
     <div>
       <MainTemplate
         mainBlock={
           <div className="container selected-episode-wrapper">
-            <div className="selected-episode-header">
-              <GoBackBtn />
-              <div>
-                <div className="selected-episode-name">Pilot</div>
-                <div className="selected-episode-date">
-                  <div>
-                    <DescriptionTitle title="Episode" />
-                    <DescriptionText text="SE01E01" />
-                  </div>
-                  <div>
-                    <DescriptionTitle title="Date" />
-                    <DescriptionText text="December 2, 2013" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="selected-episode-info">
-              <p className="cast-title">Cast</p>
-              <CastCards />
-            </div>
+            {selectedEpisode && (
+              <SelectedEpisode key={selectedEpisode.id} {...selectedEpisode} />
+            )}
           </div>
         }
       />

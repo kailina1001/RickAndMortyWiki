@@ -5,11 +5,11 @@ import { ResidentsCards } from "../ResidentsCards";
 import { CharactersCard } from "../CharactersCard";
 import { Link } from "react-router-dom";
 
-interface ILocationInfo {
+interface IEpisodeInfo {
   character: string[];
 }
 
-export const LocationInfo = memo(({ character }: ILocationInfo) => {
+export const EpisodeInfo = memo(({ character }: IEpisodeInfo) => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   let [charactersNames, setСharactersNames] = useState("");
@@ -44,18 +44,18 @@ export const LocationInfo = memo(({ character }: ILocationInfo) => {
     return newArray;
   }
   return (
-    <div className="selected-location-info">
-      <p className="residents-title">Residents</p>
-      <div className="container residents-cards-wrapper">
+    <div className="selected-episode-info">
+      <p className="cast-title">Cast</p>
+      <div className="container cast-cards-wrapper">
         {character?.map((item, index) => (
           <Link
             className="for-link"
             to={`/character/${createArray(characterId)[index]}`}
           >
-            <div className="selected-resident-card">
+            <div className="selected-cast-card">
               <img
                 src={createArray(characterImg)[index]}
-                className="selected-resident-card-img"
+                className="selected-cast-card-img"
               />
               <p>{createArray(charactersNames)[index]}</p>
               <p>{createArray(characterSpecies)[index]}</p>
