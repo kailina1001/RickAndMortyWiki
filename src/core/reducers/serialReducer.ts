@@ -1,3 +1,4 @@
+import { character } from "./../../mock/index";
 import { ActionType, createReducer } from "typesafe-actions";
 import {
   setCharacterAction,
@@ -11,6 +12,9 @@ import {
   setCurrentLocationPageAction,
   setCurrentEpisodePageAction,
   setMainCharacterAction,
+  setCharacterSpeciesFilterAction,
+  setCharacterGenderFilterAction,
+  setCharacterStatusFilterAction,
 } from "../actions/serialAction";
 import { IСharacter } from "../../types/character";
 import { ILocation } from "../../types/location";
@@ -29,6 +33,9 @@ export interface ISerialState {
   currentLocationPage: number;
   currentEpisodePage: number;
   mainCharacter: IMainСharacter[] | null;
+  characterSpecies: string;
+  characterGender: string;
+  characterStatus: string;
 }
 
 const defaultState: ISerialState = {
@@ -43,6 +50,9 @@ const defaultState: ISerialState = {
   currentLocationPage: 1,
   currentEpisodePage: 1,
   mainCharacter: null,
+  characterSpecies: "",
+  characterGender: "",
+  characterStatus: "",
 };
 
 const actions = {
@@ -57,6 +67,9 @@ const actions = {
   setCurrentLocationPageAction,
   setCurrentEpisodePageAction,
   setMainCharacterAction,
+  setCharacterSpeciesFilterAction,
+  setCharacterGenderFilterAction,
+  setCharacterStatusFilterAction,
 };
 
 export const serialReducer = createReducer<
@@ -126,5 +139,26 @@ export const serialReducer = createReducer<
     (state, { payload: mainCharacter }) => ({
       ...state,
       mainCharacter,
+    })
+  )
+  .handleAction(
+    setCharacterSpeciesFilterAction,
+    (state, { payload: characterSpecies }) => ({
+      ...state,
+      characterSpecies,
+    })
+  )
+  .handleAction(
+    setCharacterGenderFilterAction,
+    (state, { payload: characterGender }) => ({
+      ...state,
+      characterGender,
+    })
+  )
+  .handleAction(
+    setCharacterStatusFilterAction,
+    (state, { payload: characterStatus }) => ({
+      ...state,
+      characterStatus,
     })
   );

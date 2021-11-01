@@ -7,7 +7,7 @@ import { CharacterImg } from "../CharacterImg";
 import { CharacterSpecies } from "../CharacterSpecies";
 import { useDispatch, useSelector } from "react-redux";
 import { getSerialState } from "../../../core/selectors/serialSelector";
-import { getCharacterAction } from "../../../core/actions";
+import { getCharacterAction } from "../../../core/actions/serialAction";
 
 interface ICharactersCard {
   currentCharacterPage: number;
