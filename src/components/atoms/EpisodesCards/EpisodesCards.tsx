@@ -4,26 +4,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { EpisodeAirData } from "../EpisodeAirData";
 import { EpisodeName } from "../EpisodeName";
 import { EpisodeNumber } from "../EpisodeNumber";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
-import "./index.css";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import { getSerialState } from "../../../core/selectors/serialSelector";
 import { getEpisodesAction } from "../../../core/actions";
+import "./index.css";
 
 interface IEpisodeCards {
   currentEpisodePage: number;
 }
 
 export const EpisodesCards = memo(({ currentEpisodePage }: IEpisodeCards) => {
-  const dispatch = useDispatch();
-
   const { episodes } = useSelector(getSerialState);
 
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getEpisodesAction(currentEpisodePage));
   }, [dispatch, currentEpisodePage]);

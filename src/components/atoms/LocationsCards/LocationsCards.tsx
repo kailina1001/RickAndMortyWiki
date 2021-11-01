@@ -15,10 +15,9 @@ interface ILocationsCards {
 
 export const LocationsCards = memo(
   ({ currentLocationPage }: ILocationsCards) => {
-    const dispatch = useDispatch();
-
     const { locations } = useSelector(getSerialState);
 
+    const dispatch = useDispatch();
     useEffect(() => {
       dispatch(getLocationAction(currentLocationPage));
     }, [dispatch, currentLocationPage]);
@@ -30,7 +29,6 @@ export const LocationsCards = memo(
             <Link className="for-link" to={"/location/" + locations.id}>
               <div className="locations-card">
                 <LocationName name={locations.name} />
-                <LocationDimension dimension={locations.dimension} />
                 <LocationType type={locations.type} />
               </div>
             </Link>

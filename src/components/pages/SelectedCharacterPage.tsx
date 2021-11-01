@@ -8,7 +8,11 @@ import { getSelectedCharacterAction } from "../../core/actions/serialAction";
 import { SelectedCharacter } from "../molecules/SelectedCharacter";
 import { PageLoader } from "../atoms/PageLoader";
 
+/* const SelectedCharacter = lazy(() => import("../molecules/SelectedCharacter")); */
+
 export const SelectedCharacterPage = memo(() => {
+  /*   const [isLoaded, setIsLoaded] = useState(false); */
+
   const params = useParams() as any;
   const { selectedCharacter } = useSelector(getSerialState) as any;
 
@@ -16,6 +20,7 @@ export const SelectedCharacterPage = memo(() => {
 
   useEffect(() => {
     dispatch(getSelectedCharacterAction(params.id));
+    /*   setIsLoaded(true); */
   }, [dispatch, params.id]);
 
   if (!selectedCharacter) {

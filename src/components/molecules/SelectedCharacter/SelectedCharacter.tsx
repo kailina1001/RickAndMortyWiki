@@ -1,5 +1,5 @@
 import * as React from "react";
-import { memo } from "react";
+import { memo, useState } from "react";
 import "./index.css";
 import { BrowserRouter as Router, useHistory } from "react-router-dom";
 import { GoBackBtn } from "../../atoms/GoBackBtn";
@@ -31,3 +31,5 @@ export const SelectedCharacter = memo((character: IСharacter) => {
     </div>
   );
 });
+
+export { SelectedCharacter as default };

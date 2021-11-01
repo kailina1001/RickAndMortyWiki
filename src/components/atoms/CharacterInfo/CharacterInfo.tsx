@@ -30,7 +30,7 @@ export const CharacterInfo = memo(
     episode,
     character,
   }: ICharaterInfo) => {
-    const [error, setError] = useState(null);
+    /*     const [error, setError] = useState(null); */
     const [isLoaded, setIsLoaded] = useState(false);
     let [names, setNames] = useState("");
     let [episodeNum, setEpisodeNum] = useState("");
@@ -47,11 +47,11 @@ export const CharacterInfo = memo(
               setEpisodeNum((episodeNum += "&" + result.episode));
               setEpisodeDate((episodeDate += "&" + result.air_date));
               setEpisodeId((episodeId += "&" + result.id));
-            },
-            (error) => {
+            }
+            /*   (error) => {
               setIsLoaded(true);
               setError(error);
-            }
+            } */
           )
       );
     }, []);

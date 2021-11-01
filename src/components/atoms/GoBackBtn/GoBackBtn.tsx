@@ -4,9 +4,9 @@ import "./index.css";
 /* 
 interface IGoBackBtn {
   onClick: () => void;
-}
+} */
 
-export const GoBackBtn = memo(({ onClick }: IGoBackBtn) => {
+/* export const GoBackBtn = memo(({ onClick }: IGoBackBtn) => {
   return (
     <button type="submit" className="selected-btn" onClick={() => onClick()}>
       Go back
