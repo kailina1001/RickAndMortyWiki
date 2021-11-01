@@ -20,7 +20,7 @@ export const Home = memo(() => {
             <div className="main-page">
               <div className="main-page-logo-search">
                 <img src={mainPageLogo} className="main-page-logo" />
-                <MainPageSearch />
+                {/*  <MainPageSearch /> */}
               </div>
               <div className="info">
                 <Title title={"WELCOME TO THE RICK AND MORTY WIKI!"} />

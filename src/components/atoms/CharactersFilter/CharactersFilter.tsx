@@ -5,7 +5,7 @@ import "./index.css";
 export const CharactersFilter = memo(() => (
   <div className="characters-filter">
     <input
-      placeholder="Filter by name..."
+      placeholder="Search character name..."
       type="search"
       className="characters-search"
     ></input>
