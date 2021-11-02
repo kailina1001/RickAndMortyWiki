@@ -95,7 +95,7 @@ function* getMainCharacterAction({ payload: mainCharacter }: Action<number>) {
   }
 }
 
-function* getCharacterSpeciesFilterAction({
+/* function* getCharacterSpeciesFilterAction({
   payload: characterSpecies,
 }: Action<number>) {
   try {
@@ -133,7 +133,7 @@ function* getCharacterStatusFilterAction({
   } catch (e: any) {
     yield put(setSerialErrorAction("Character not found"));
   }
-}
+} */
 
 function* getFiltredCharacterSaga({ payload: characterParams }: Action<any>) {
   try {
@@ -143,6 +143,17 @@ function* getFiltredCharacterSaga({ payload: characterParams }: Action<any>) {
     yield put(setCharacterAction(data.data.results));
   } catch (e: any) {
     yield put(setSerialErrorAction("Character not found"));
+  }
+}
+
+function* getFiltredLocationSaga({ payload: locationParams }: Action<any>) {
+  try {
+    const data: { data: any } = yield call(() =>
+      LocationService.getLocationFilterAction(locationParams)
+    );
+    yield put(setLocationAction(data.data.results));
+  } catch (e: any) {
+    yield put(setSerialErrorAction("Location not found"));
   }
 }
 
@@ -162,4 +173,5 @@ export function* serialSaga() {
   yield takeEvery(ACTIONS.GET_MAIN_CHARACTER_ACTION, getMainCharacterAction);
 
   yield takeEvery(ACTIONS.GET_CHARACTER_PARAMS_ACTION, getFiltredCharacterSaga);
+  yield takeEvery(ACTIONS.GET_LOCATION_PARAMS_ACTION, getFiltredLocationSaga);
 }

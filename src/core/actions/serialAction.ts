@@ -105,3 +105,11 @@ export const setCharacterParamsAction = createAction(
 export const getCharacterParamsAction = createAction(
   ACTIONS.GET_CHARACTER_PARAMS_ACTION
 )<any>();
+
+export const setLocationParamsAction = createAction(
+  ACTIONS.SET_LOCATION_PARAMS_ACTION
+)<any>();
+
+export const getLocationParamsAction = createAction(
+  ACTIONS.GET_LOCATION_PARAMS_ACTION
+)<any>();
