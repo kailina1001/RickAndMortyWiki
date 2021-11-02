@@ -1,3 +1,4 @@
+import { character } from "./../mock/index";
 import { BaseService } from "./BaseService";
 
 class CharacterAPIService extends BaseService {
@@ -8,14 +9,14 @@ class CharacterAPIService extends BaseService {
     return this.get(`/${id}`);
   }
 
-  public async getCharacterSpeciesFilterAction(characterSpecie: string) {
-    return this.get(`/?species=${characterSpecie}`);
-  }
-  public async getCharacterGenderFilterAction(characterGender: string) {
-    return this.get(`/?gender=${characterGender}`);
-  }
-  public async getCharacterStatusFilterAction(characterStatus: string) {
-    return this.get(`/?status=${characterStatus}`);
+  public async getCharacterFilterAction(characterParams: any) {
+    return this.get(
+      `/?name=${characterParams.name ? characterParams.name : ""}&status=${
+        characterParams.status ? characterParams.status : ""
+      }&gender=${
+        characterParams.gender ? characterParams.gender : ""
+      }&species=${characterParams.species ? characterParams.species : ""}`
+    );
   }
 }
 export const CharacterService = new CharacterAPIService();

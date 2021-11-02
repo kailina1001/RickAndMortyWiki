@@ -81,6 +81,9 @@ export const setCharacterGenderFilterAction = createAction(
 export const setCharacterStatusFilterAction = createAction(
   ACTIONS.SET_CHARACTER_STATUS_FILTER_ACTION
 )<string>();
+export const setCharacterNameFilterAction = createAction(
+  ACTIONS.SET_CHARACTER_NAME_FILTER_ACTION
+)<string>();
 
 export const getCharacterSpeciesFilterAction = createAction(
   ACTIONS.GET_CHARACTER_SPECIES_FILTER_ACTION
@@ -90,4 +93,15 @@ export const getCharacterGenderFilterAction = createAction(
 )<any>();
 export const getCharacterStatusFilterAction = createAction(
   ACTIONS.GET_CHARACTER_STATUS_FILTER_ACTION
+)<any>();
+export const getCharacterNameFilterAction = createAction(
+  ACTIONS.GET_CHARACTER_STATUS_FILTER_ACTION
+)<any>();
+
+export const setCharacterParamsAction = createAction(
+  ACTIONS.SET_CHARACTER_PARAMS_ACTION
+)<any>();
+
+export const getCharacterParamsAction = createAction(
+  ACTIONS.GET_CHARACTER_PARAMS_ACTION
 )<any>();

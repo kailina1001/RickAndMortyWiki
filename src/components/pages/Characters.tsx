@@ -7,23 +7,19 @@ import { CharactersFilter } from "../atoms/CharactersFilter";
 import { CharactersCard } from "../atoms/CharactersCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getSerialState } from "../../core/selectors/serialSelector";
-import { setCurrentCharacterPageAction } from "../../core/actions";
+import {
+  getCharacterGenderFilterAction,
+  getCharacterNameFilterAction,
+  getCharacterSpeciesFilterAction,
+  getCharacterStatusFilterAction,
+  setCurrentCharacterPageAction,
+} from "../../core/actions";
 import { PagesBtn } from "../atoms/PagesBtn";
 
 export const Characters = memo(() => {
-  const {
-    currentCharacterPage,
-    characterSpecies,
-    characterGender,
-    characterStatus,
-  } = useSelector(getSerialState) as any;
-
-  /*   const [filteredCharacters, setFilteredCharacters] = useState(
-    searchCharacterValue.slice(0, 1)
-  ); */
+  const { currentCharacterPage, characters } = useSelector(getSerialState);
 
   const dispatch = useDispatch();
-
   const nextCharacterPage = () => {
     dispatch(setCurrentCharacterPageAction(currentCharacterPage + 1));
   };
@@ -48,31 +44,6 @@ export const Characters = memo(() => {
     }
   }
 
-  /*   // поисковик
-
-  const [searchValue, setSearchValue] = useState("");
-
-  useEffect(() => {
-    console.log("search");
-    if (searchValue.length > 2) {
-      const newCharacters = searchCharacterValue.filter(({ name }) =>
-        name
-          .toLocaleLowerCase()
-          .trim()
-          .includes(searchValue.toLocaleLowerCase().trim())
-      );
-      setFilteredCharacters(newCharacters);
-      return;
-    }
-    if (searchValue.length) {
-      setFilteredCharacters(searchCharacterValue);
-    }
-  }, [searchValue, setSearchValue]);
-
-  const onChangeHandler = (name: string) => {
-    setSearchValue(name);
-  };
- */
   return (
     <div>
       <MainTemplate

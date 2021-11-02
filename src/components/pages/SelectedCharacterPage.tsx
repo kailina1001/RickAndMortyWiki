@@ -23,6 +23,7 @@ export const SelectedCharacterPage = memo(() => {
     /*   setIsLoaded(true); */
   }, [dispatch, params.id]);
 
+  //!! не работающий прелоудер!!!!!!!
   if (!selectedCharacter) {
     return <PageLoader />;
   } else {

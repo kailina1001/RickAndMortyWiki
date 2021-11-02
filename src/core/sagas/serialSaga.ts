@@ -135,6 +135,17 @@ function* getCharacterStatusFilterAction({
   }
 }
 
+function* getFiltredCharacterSaga({ payload: characterParams }: Action<any>) {
+  try {
+    const data: { data: any } = yield call(() =>
+      CharacterService.getCharacterFilterAction(characterParams)
+    );
+    yield put(setCharacterAction(data.data.results));
+  } catch (e: any) {
+    yield put(setSerialErrorAction("Character not found"));
+  }
+}
+
 export function* serialSaga() {
   yield takeEvery(ACTIONS.GET_CHARACTER_ACTION, getCharacterSaga);
   yield takeEvery(
@@ -150,16 +161,5 @@ export function* serialSaga() {
   yield takeEvery(ACTIONS.GET_SELECTED_EPISODE_ACTION, getSelectedEpisodeSaga);
   yield takeEvery(ACTIONS.GET_MAIN_CHARACTER_ACTION, getMainCharacterAction);
 
-  yield takeEvery(
-    ACTIONS.GET_CHARACTER_SPECIES_FILTER_ACTION,
-    getCharacterSpeciesFilterAction
-  );
-  yield takeEvery(
-    ACTIONS.GET_CHARACTER_GENDER_FILTER_ACTION,
-    getCharacterGenderFilterAction
-  );
-  yield takeEvery(
-    ACTIONS.GET_CHARACTER_STATUS_FILTER_ACTION,
-    getCharacterStatusFilterAction
-  );
+  yield takeEvery(ACTIONS.GET_CHARACTER_PARAMS_ACTION, getFiltredCharacterSaga);
 }
