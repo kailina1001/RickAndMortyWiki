@@ -1,4 +1,3 @@
-import { CharacterName } from "./../../components/atoms/CharacterName/CharacterName";
 import { character } from "./../../mock/index";
 import { ActionType, createReducer } from "typesafe-actions";
 import {
@@ -37,10 +36,6 @@ export interface ISerialState {
   currentEpisodePage: number;
   mainCharacter: IMainСharacter[] | null;
   characterParams: any;
-  /*  characterName: string;
-  characterSpecies: string;
-  characterGender: string;
-  characterStatus: string; */
 }
 
 const defaultState: ISerialState = {
@@ -56,10 +51,6 @@ const defaultState: ISerialState = {
   currentEpisodePage: 1,
   mainCharacter: null,
   characterParams: {},
-  /* characterName: "",
-  characterSpecies: "",
-  characterGender: "",
-  characterStatus: "", */
 };
 
 const actions = {
