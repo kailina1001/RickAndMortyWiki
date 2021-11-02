@@ -1,4 +1,3 @@
-import { character } from "./../mock/index";
 import { BaseService } from "./BaseService";
 
 class CharacterAPIService extends BaseService {

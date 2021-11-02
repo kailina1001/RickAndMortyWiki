@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { memo } from "react";
 import { MainTemplate } from "../template/MainTemplate";
 import mainPageLogo from "../../images/mainPageLogo.png";

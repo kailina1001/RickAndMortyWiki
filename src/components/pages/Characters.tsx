@@ -7,17 +7,11 @@ import { CharactersFilter } from "../atoms/CharactersFilter";
 import { CharactersCard } from "../atoms/CharactersCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getSerialState } from "../../core/selectors/serialSelector";
-import {
-  getCharacterGenderFilterAction,
-  getCharacterNameFilterAction,
-  getCharacterSpeciesFilterAction,
-  getCharacterStatusFilterAction,
-  setCurrentCharacterPageAction,
-} from "../../core/actions";
+import { setCurrentCharacterPageAction } from "../../core/actions";
 import { PagesBtn } from "../atoms/PagesBtn";
 
 export const Characters = memo(() => {
-  const { currentCharacterPage, characters } = useSelector(getSerialState);
+  const { currentCharacterPage } = useSelector(getSerialState);
 
   const dispatch = useDispatch();
   const nextCharacterPage = () => {

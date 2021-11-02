@@ -1,4 +1,3 @@
-import { character } from "./../../mock/index";
 import { ActionType, createReducer } from "typesafe-actions";
 import {
   setCharacterAction,
@@ -17,6 +16,7 @@ import {
   setCharacterStatusFilterAction,
   setCharacterNameFilterAction,
   setCharacterParamsAction,
+  setLocationParamsAction,
 } from "../actions/serialAction";
 import { IСharacter } from "../../types/character";
 import { ILocation } from "../../types/location";
@@ -36,6 +36,7 @@ export interface ISerialState {
   currentEpisodePage: number;
   mainCharacter: IMainСharacter[] | null;
   characterParams: any;
+  locationParams: any;
 }
 
 const defaultState: ISerialState = {
@@ -51,6 +52,7 @@ const defaultState: ISerialState = {
   currentEpisodePage: 1,
   mainCharacter: null,
   characterParams: {},
+  locationParams: {},
 };
 
 const actions = {
@@ -70,6 +72,7 @@ const actions = {
   setCharacterStatusFilterAction,
   setCharacterNameFilterAction,
   setCharacterParamsAction,
+  setLocationParamsAction,
 };
 
 export const serialReducer = createReducer<
@@ -174,5 +177,12 @@ export const serialReducer = createReducer<
     (state, { payload: characterParams }) => ({
       ...state,
       characterParams,
+    })
+  )
+  .handleAction(
+    setLocationParamsAction,
+    (state, { payload: locationParams }) => ({
+      ...state,
+      locationParams,
     })
   );

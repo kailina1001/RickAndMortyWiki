@@ -7,12 +7,6 @@ import {
 } from "../../../core";
 import { getSerialState } from "../../../core/selectors/serialSelector";
 import "./index.css";
-/* 
-interface ICharactersFilter {
-  onChangeHandlerSpecies: (text: string) => void;
-  onChangeHandlerStatus: (text: string) => void;
-  onChangeHandlerGender: (text: string) => void;
-} */
 
 export const CharactersFilter = memo(() => {
   const { characters, characterParams } = useSelector(getSerialState);
