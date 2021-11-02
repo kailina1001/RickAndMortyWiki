@@ -14,7 +14,7 @@ export const PagesBtn = memo(
       <button
         className={`all-pages-btn active ${btnClassName}`}
         onClick={onClickPage}
-        {...btnClassName}
+        /* {...btnClassName} */
       >
         {title}
       </button>

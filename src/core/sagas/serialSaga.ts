@@ -95,6 +95,57 @@ function* getMainCharacterAction({ payload: mainCharacter }: Action<number>) {
   }
 }
 
+function* getCharacterSpeciesFilterAction({
+  payload: characterSpecies,
+}: Action<number>) {
+  try {
+    const data: { data: any } = yield call(() =>
+      CharacterService.getCharacter(characterSpecies)
+    );
+    yield put(setMainCharacterAction(data.data.results));
+  } catch (e: any) {
+    yield put(setSerialErrorAction("Character not found"));
+  }
+}
+
+function* getCharacterGenderFilterAction({
+  payload: characterGender,
+}: Action<number>) {
+  try {
+    const data: { data: any } = yield call(() =>
+      CharacterService.getCharacter(characterGender)
+    );
+
+    yield put(setMainCharacterAction(data.data.results));
+  } catch (e: any) {
+    yield put(setSerialErrorAction("Character not found"));
+  }
+}
+
+function* getCharacterStatusFilterAction({
+  payload: characterStatus,
+}: Action<number>) {
+  try {
+    const data: { data: any } = yield call(() =>
+      CharacterService.getCharacter(characterStatus)
+    );
+    yield put(setMainCharacterAction(data.data.results));
+  } catch (e: any) {
+    yield put(setSerialErrorAction("Character not found"));
+  }
+}
+
+function* getFiltredCharacterSaga({ payload: characterParams }: Action<any>) {
+  try {
+    const data: { data: any } = yield call(() =>
+      CharacterService.getCharacterFilterAction(characterParams)
+    );
+    yield put(setCharacterAction(data.data.results));
+  } catch (e: any) {
+    yield put(setSerialErrorAction("Character not found"));
+  }
+}
+
 export function* serialSaga() {
   yield takeEvery(ACTIONS.GET_CHARACTER_ACTION, getCharacterSaga);
   yield takeEvery(
@@ -109,4 +160,6 @@ export function* serialSaga() {
   yield takeEvery(ACTIONS.GET_EPISODE_ACTION, getEpisodeSaga);
   yield takeEvery(ACTIONS.GET_SELECTED_EPISODE_ACTION, getSelectedEpisodeSaga);
   yield takeEvery(ACTIONS.GET_MAIN_CHARACTER_ACTION, getMainCharacterAction);
+
+  yield takeEvery(ACTIONS.GET_CHARACTER_PARAMS_ACTION, getFiltredCharacterSaga);
 }

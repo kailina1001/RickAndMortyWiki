@@ -1,3 +1,5 @@
+import { CharacterName } from "./../../components/atoms/CharacterName/CharacterName";
+import { character } from "./../../mock/index";
 import { ActionType, createReducer } from "typesafe-actions";
 import {
   setCharacterAction,
@@ -11,6 +13,11 @@ import {
   setCurrentLocationPageAction,
   setCurrentEpisodePageAction,
   setMainCharacterAction,
+  setCharacterSpeciesFilterAction,
+  setCharacterGenderFilterAction,
+  setCharacterStatusFilterAction,
+  setCharacterNameFilterAction,
+  setCharacterParamsAction,
 } from "../actions/serialAction";
 import { IСharacter } from "../../types/character";
 import { ILocation } from "../../types/location";
@@ -29,6 +36,11 @@ export interface ISerialState {
   currentLocationPage: number;
   currentEpisodePage: number;
   mainCharacter: IMainСharacter[] | null;
+  characterParams: any;
+  /*  characterName: string;
+  characterSpecies: string;
+  characterGender: string;
+  characterStatus: string; */
 }
 
 const defaultState: ISerialState = {
@@ -43,6 +55,11 @@ const defaultState: ISerialState = {
   currentLocationPage: 1,
   currentEpisodePage: 1,
   mainCharacter: null,
+  characterParams: {},
+  /* characterName: "",
+  characterSpecies: "",
+  characterGender: "",
+  characterStatus: "", */
 };
 
 const actions = {
@@ -57,6 +74,11 @@ const actions = {
   setCurrentLocationPageAction,
   setCurrentEpisodePageAction,
   setMainCharacterAction,
+  setCharacterSpeciesFilterAction,
+  setCharacterGenderFilterAction,
+  setCharacterStatusFilterAction,
+  setCharacterNameFilterAction,
+  setCharacterParamsAction,
 };
 
 export const serialReducer = createReducer<
@@ -126,5 +148,40 @@ export const serialReducer = createReducer<
     (state, { payload: mainCharacter }) => ({
       ...state,
       mainCharacter,
+    })
+  )
+  .handleAction(
+    setCharacterSpeciesFilterAction,
+    (state, { payload: characterSpecies }) => ({
+      ...state,
+      characterSpecies,
+    })
+  )
+  .handleAction(
+    setCharacterGenderFilterAction,
+    (state, { payload: characterGender }) => ({
+      ...state,
+      characterGender,
+    })
+  )
+  .handleAction(
+    setCharacterStatusFilterAction,
+    (state, { payload: characterStatus }) => ({
+      ...state,
+      characterStatus,
+    })
+  )
+  .handleAction(
+    setCharacterNameFilterAction,
+    (state, { payload: characterName }) => ({
+      ...state,
+      characterName,
+    })
+  )
+  .handleAction(
+    setCharacterParamsAction,
+    (state, { payload: characterParams }) => ({
+      ...state,
+      characterParams,
     })
   );
