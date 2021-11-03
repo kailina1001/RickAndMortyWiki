@@ -58,19 +58,30 @@ export const LocationsFilter = memo(() => {
         type="search"
         className="locations-search"
       ></input>
-      <select onChange={(e) => onChangeHandlerType(e.target.value)}>
+      <select
+        className="location-filter-select"
+        onChange={(e) => onChangeHandlerType(e.target.value)}
+      >
         <option value="type">Type</option>
         {locationTypeResult.map((result) => (
           <option value={result.toLowerCase()}>{result.toUpperCase()}</option>
         ))}
       </select>
-      <select onChange={(e) => onChangeHandlerDimension(e.target.value)}>
+      <select
+        className="location-filter-select"
+        onChange={(e) => onChangeHandlerDimension(e.target.value)}
+      >
         <option value="dimension">Dimension</option>
         {locationDimensionResult.map((result) => (
           <option value={result.toLowerCase()}>{result.toUpperCase()}</option>
         ))}
       </select>
-      <button onClick={onClickLocationParams}> Show locations </button>
+      <button
+        className="location-filter-btn active"
+        onClick={onClickLocationParams}
+      >
+        Show locations
+      </button>
     </div>
   );
 });

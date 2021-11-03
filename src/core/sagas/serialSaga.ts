@@ -157,6 +157,17 @@ function* getFiltredLocationSaga({ payload: locationParams }: Action<any>) {
   }
 }
 
+function* getFiltredEpisodeSaga({ payload: episodeParams }: Action<any>) {
+  try {
+    const data: { data: any } = yield call(() =>
+      EpisodeService.getEpisodeFilterAction(episodeParams)
+    );
+    yield put(setEpisodesAction(data.data.results));
+  } catch (e: any) {
+    yield put(setSerialErrorAction("Location not found"));
+  }
+}
+
 export function* serialSaga() {
   yield takeEvery(ACTIONS.GET_CHARACTER_ACTION, getCharacterSaga);
   yield takeEvery(
@@ -174,4 +185,5 @@ export function* serialSaga() {
 
   yield takeEvery(ACTIONS.GET_CHARACTER_PARAMS_ACTION, getFiltredCharacterSaga);
   yield takeEvery(ACTIONS.GET_LOCATION_PARAMS_ACTION, getFiltredLocationSaga);
+  yield takeEvery(ACTIONS.GET_EPISODE_PARAMS_ACTION, getFiltredEpisodeSaga);
 }

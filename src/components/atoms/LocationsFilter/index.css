@@ -7,23 +7,36 @@
 
 .locations-search {
   margin-bottom: 20px;
-  width: 120px;
-  height: 30px;
+  width: 170px;
+  height: 28px;
   border: 1px solid #ebebeb;
   box-sizing: border-box;
   border-radius: 8px;
-
   font-family: "Roboto";
   padding-left: 20px;
 }
 
-select {
+.location-filter-select {
   margin-bottom: 20px;
-  width: 140px;
+  width: 170px;
   height: 32px;
   border: 1px solid #ebebeb;
   box-sizing: border-box;
   border-radius: 8px;
   font-family: "Roboto";
   padding-left: 20px;
+}
+
+.location-filter-btn {
+  margin-bottom: 50px;
+  width: 135px;
+  height: 30px;
+  border: 1px solid #006d7c;
+  border-radius: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #fff;
 }
