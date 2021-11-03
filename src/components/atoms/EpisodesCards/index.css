@@ -7,7 +7,6 @@
   border-radius: 35px;
   display: flex;
   flex-direction: column;
-
   padding: 30px 35px;
   font-family: "Roboto";
   font-style: normal;
@@ -16,6 +15,11 @@
   line-height: 1.75;
   text-align: left;
   color: #006d7c;
+}
+
+.episodes-card:hover {
+  box-shadow: 1px 1px 7px 1px #505050;
+  margin-top: -2px;
 }
 
 .episodes-cards-wrapper {

@@ -113,3 +113,11 @@ export const setLocationParamsAction = createAction(
 export const getLocationParamsAction = createAction(
   ACTIONS.GET_LOCATION_PARAMS_ACTION
 )<any>();
+
+export const setEpisodeParamsAction = createAction(
+  ACTIONS.SET_EPISODE_PARAMS_ACTION
+)<any>();
+
+export const getEpisodeParamsAction = createAction(
+  ACTIONS.GET_EPISODE_PARAMS_ACTION
+)<any>();

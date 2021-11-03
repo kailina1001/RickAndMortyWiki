@@ -18,6 +18,11 @@
   animation: rotateCard 1s linear;
 }
 
+.character-card:hover {
+  box-shadow: 1px 1px 7px 1px #505050;
+  margin-top: -2px;
+}
+
 .characters-cards-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

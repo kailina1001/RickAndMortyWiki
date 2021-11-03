@@ -70,25 +70,39 @@ export const CharactersFilter = memo(() => {
         type="search"
         className="characters-search"
       ></input>
-      <select onChange={(e) => onChangeHandlerSpecies(e.target.value)}>
+      <select
+        className="character-filter-select"
+        onChange={(e) => onChangeHandlerSpecies(e.target.value)}
+      >
         <option value="species">Species</option>
         {characterSpeciesResult.map((result) => (
           <option value={result.toLowerCase()}>{result.toUpperCase()}</option>
         ))}
       </select>
-      <select onChange={(e) => onChangeHandlerGender(e.target.value)}>
+      <select
+        className="character-filter-select"
+        onChange={(e) => onChangeHandlerGender(e.target.value)}
+      >
         <option value="gender">Gender</option>
         {characterGenderResult.map((result) => (
           <option value={result.toLowerCase()}>{result.toUpperCase()}</option>
         ))}
       </select>
-      <select onChange={(e) => onChangeHandlerStatus(e.target.value)}>
+      <select
+        className="character-filter-select"
+        onChange={(e) => onChangeHandlerStatus(e.target.value)}
+      >
         <option value="status">Status</option>
         {characterStatusResult.map((result) => (
           <option value={result.toLowerCase()}>{result.toUpperCase()}</option>
         ))}
       </select>
-      <button onClick={onClickCharacterParams}>click</button>
+      <button
+        className="character-filter-btn active"
+        onClick={onClickCharacterParams}
+      >
+        Show character
+      </button>
     </div>
   );
 });

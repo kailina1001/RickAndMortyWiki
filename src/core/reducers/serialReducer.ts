@@ -17,6 +17,7 @@ import {
   setCharacterNameFilterAction,
   setCharacterParamsAction,
   setLocationParamsAction,
+  setEpisodeParamsAction,
 } from "../actions/serialAction";
 import { IСharacter } from "../../types/character";
 import { ILocation } from "../../types/location";
@@ -37,6 +38,7 @@ export interface ISerialState {
   mainCharacter: IMainСharacter[] | null;
   characterParams: any;
   locationParams: any;
+  episodeParams: any;
 }
 
 const defaultState: ISerialState = {
@@ -53,6 +55,7 @@ const defaultState: ISerialState = {
   mainCharacter: null,
   characterParams: {},
   locationParams: {},
+  episodeParams: {},
 };
 
 const actions = {
@@ -73,6 +76,7 @@ const actions = {
   setCharacterNameFilterAction,
   setCharacterParamsAction,
   setLocationParamsAction,
+  setEpisodeParamsAction,
 };
 
 export const serialReducer = createReducer<
@@ -184,5 +188,12 @@ export const serialReducer = createReducer<
     (state, { payload: locationParams }) => ({
       ...state,
       locationParams,
+    })
+  )
+  .handleAction(
+    setEpisodeParamsAction,
+    (state, { payload: episodeParams }) => ({
+      ...state,
+      episodeParams,
     })
   );

@@ -1,11 +1,33 @@
-.main-page-search {
-  width: 330px;
-  height: 32px;
+.episode-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 25px;
+}
+
+.episode-page-search {
+  width: 370px;
+  height: 28px;
   border: 1px solid #ebebeb;
   box-sizing: border-box;
   border-radius: 8px;
   font-family: "Roboto";
   padding-left: 20px;
   display: block;
-  margin: 0 auto 20px auto;
+  margin-right: 50px;
+  /*  margin: 0 auto 20px auto; */
+}
+
+.episode-filter-btn {
+  margin-bottom: 50px;
+  width: 135px;
+  height: 30px;
+  border: 1px solid #006d7c;
+  border-radius: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #fff;
 }
