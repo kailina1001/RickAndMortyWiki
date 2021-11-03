@@ -26,13 +26,32 @@ export const SelectedCharacterPage = memo(() => {
   //!! не работающий прелоудер!!!!!!!
   if (!selectedCharacter) {
     return <PageLoader />;
+  } else {
+    return (
+      <div>
+        <MainTemplate
+          mainBlock={
+            <div className="selected-character-page-wrapper">
+              {selectedCharacter && (
+                <SelectedCharacter
+                  key={selectedCharacter.id}
+                  {...selectedCharacter}
+                />
+              )}
+            </div>
+          }
+        />
+      </div>
+    );
   }
+});
 
-  return (
+/*   return (
     <div>
       <MainTemplate
         mainBlock={
           <div className="selected-character-page-wrapper">
+            
             {selectedCharacter && (
               <SelectedCharacter
                 key={selectedCharacter.id}
@@ -44,4 +63,4 @@ export const SelectedCharacterPage = memo(() => {
       />
     </div>
   );
-});
+}); */
