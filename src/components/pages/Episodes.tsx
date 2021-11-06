@@ -14,6 +14,8 @@ import {
 import { getSerialState } from "../../core/selectors/serialSelector";
 import { PagesBtn } from "../atoms/PagesBtn";
 import { useEffect, useRef, useState } from "react";
+import { isEpisodeFilterError } from "../../core/sagas";
+import { NotFound } from "../atoms/NotFound";
 export const Episodes = memo(() => {
   const dispatch = useDispatch();
   // переключение страниц (по кнопкам)
@@ -55,11 +57,8 @@ export const Episodes = memo(() => {
 
   const onClickEpisodeParams = () => {
     dispatch(getEpisodeParamsAction(episodeParams));
+    dispatch(getEpisodeParamsAction(episodeParams));
   };
-
-  /*    if ( onChangeInputValue={!e}) {
-    return <PageLoader />;
-  } else () */
 
   return (
     <div>
@@ -76,25 +75,31 @@ export const Episodes = memo(() => {
                 onChangeInputValue={onChangeInputValue}
                 onClick={onClickEpisodeParams}
               />
-              <EpisodesCards currentEpisodePage={currentEpisodePage} />
-              <div className="pages-btn">
-                <PagesBtn
-                  title={"Previous"}
-                  onClickPage={() => {
-                    checkPage(currentEpisodePage, "prev");
-                    prevEpisodePage();
-                  }}
-                  btnClassName={"previous-btn"}
-                />
-                <PagesBtn
-                  title={"Next"}
-                  onClickPage={() => {
-                    checkPage(currentEpisodePage, "next");
-                    nextEpisodePage();
-                  }}
-                  btnClassName={"next-btn"}
-                />
-              </div>
+              {isEpisodeFilterError ? (
+                <NotFound />
+              ) : (
+                <div>
+                  <EpisodesCards currentEpisodePage={currentEpisodePage} />
+                  <div className="pages-btn">
+                    <PagesBtn
+                      title={"Previous"}
+                      onClickPage={() => {
+                        checkPage(currentEpisodePage, "prev");
+                        prevEpisodePage();
+                      }}
+                      btnClassName={"previous-btn"}
+                    />
+                    <PagesBtn
+                      title={"Next"}
+                      onClickPage={() => {
+                        checkPage(currentEpisodePage, "next");
+                        nextEpisodePage();
+                      }}
+                      btnClassName={"next-btn"}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         }

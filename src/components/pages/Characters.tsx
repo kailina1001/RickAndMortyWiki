@@ -13,6 +13,8 @@ import {
   setCurrentCharacterPageAction,
 } from "../../core/actions";
 import { PagesBtn } from "../atoms/PagesBtn";
+import { isCharacterFilterError } from "../../core/sagas";
+import { NotFound } from "../atoms/NotFound";
 
 export const Characters = memo(() => {
   const dispatch = useDispatch();
@@ -87,8 +89,8 @@ export const Characters = memo(() => {
 
   const onClickCharacterParams = () => {
     dispatch(getCharacterParamsAction(characterParams));
+    dispatch(getCharacterParamsAction(characterParams));
   };
-
   return (
     <div>
       <MainTemplate
@@ -106,25 +108,31 @@ export const Characters = memo(() => {
                 onChangeHandlerStatus={onChangeHandlerStatus}
                 onClick={onClickCharacterParams}
               />
-              <CharactersCard currentCharacterPage={currentCharacterPage} />
-              <div className="pages-btn">
-                <PagesBtn
-                  title={"Previous"}
-                  onClickPage={() => {
-                    checkPage(currentCharacterPage, "prev");
-                    prevCharacterPage();
-                  }}
-                  btnClassName={"previous-btn"}
-                />
-                <PagesBtn
-                  title={"Next"}
-                  onClickPage={() => {
-                    checkPage(currentCharacterPage, "next");
-                    nextCharacterPage();
-                  }}
-                  btnClassName={"next-btn"}
-                />
-              </div>
+              {isCharacterFilterError ? (
+                <NotFound />
+              ) : (
+                <div>
+                  <CharactersCard currentCharacterPage={currentCharacterPage} />
+                  <div className="pages-btn">
+                    <PagesBtn
+                      title={"Previous"}
+                      onClickPage={() => {
+                        checkPage(currentCharacterPage, "prev");
+                        prevCharacterPage();
+                      }}
+                      btnClassName={"previous-btn"}
+                    />
+                    <PagesBtn
+                      title={"Next"}
+                      onClickPage={() => {
+                        checkPage(currentCharacterPage, "next");
+                        nextCharacterPage();
+                      }}
+                      btnClassName={"next-btn"}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         }
