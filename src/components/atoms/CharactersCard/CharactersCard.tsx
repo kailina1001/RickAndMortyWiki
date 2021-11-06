@@ -9,6 +9,7 @@ import { getSerialState } from "../../../core/selectors/serialSelector";
 import { getCharacterAction } from "../../../core/actions";
 import { Link } from "react-router-dom";
 
+
 interface ICharactersCard {
   currentCharacterPage: number;
 }

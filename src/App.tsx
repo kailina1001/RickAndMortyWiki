@@ -21,7 +21,7 @@ function App() {
         <PublicRoute component={Episodes} path="/episodes" exact />
         <PublicRoute
           component={SelectedCharacterPage}
-          path="/character/:id"
+          path="/character/:id?"
           exact
         />
         <PublicRoute

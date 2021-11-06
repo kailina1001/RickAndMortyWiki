@@ -32,6 +32,7 @@ export const SelectedCharacterPage = memo(() => {
       <MainTemplate
         mainBlock={
           <div className="selected-character-page-wrapper">
+            
             {selectedCharacter && (
               <SelectedCharacter
                 key={selectedCharacter.id}
@@ -43,4 +44,4 @@ export const SelectedCharacterPage = memo(() => {
       />
     </div>
   );
-});
+}); 
