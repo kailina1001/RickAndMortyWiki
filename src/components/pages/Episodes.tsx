@@ -6,14 +6,18 @@ import EpisodesLogo from "../../images/EpisodesLogo.png";
 import { EpisodeSearch } from "../atoms/EpisodeSearch";
 import { EpisodesCards } from "../atoms/EpisodesCards";
 import { useDispatch, useSelector } from "react-redux";
-import { setCurrentEpisodePageAction } from "../../core";
+import {
+  getEpisodeParamsAction,
+  setCurrentEpisodePageAction,
+  setEpisodeParamsAction,
+} from "../../core";
 import { getSerialState } from "../../core/selectors/serialSelector";
 import { PagesBtn } from "../atoms/PagesBtn";
-
+import { useEffect, useRef, useState } from "react";
 export const Episodes = memo(() => {
-  const { currentEpisodePage } = useSelector(getSerialState);
-
   const dispatch = useDispatch();
+  // переключение страниц (по кнопкам)
+  const { currentEpisodePage } = useSelector(getSerialState);
   const nextEpisodePage = () => {
     dispatch(setCurrentEpisodePageAction(currentEpisodePage + 1));
   };
@@ -36,17 +40,42 @@ export const Episodes = memo(() => {
     }
   }
 
+  // поиск по названию эпизода
+
+  const { episodeParams } = useSelector(getSerialState);
+
+  const onChangeInputValue = (e: string) => {
+    dispatch(
+      setEpisodeParamsAction({
+        ...episodeParams,
+        name: e,
+      })
+    );
+  };
+
+  const onClickEpisodeParams = () => {
+    dispatch(getEpisodeParamsAction(episodeParams));
+  };
+
+  /*    if ( onChangeInputValue={!e}) {
+    return <PageLoader />;
+  } else () */
+
   return (
     <div>
       <MainTemplate
         mainBlock={
           <div className="episodes-page-wrapper">
-            <div className="episodes-page">
+            <div className="container episodes-page">
               <div className="episodes-logo">
                 <img src={EpisodesLogo} className="episodes-page-logo" />
               </div>
               <Title title={"Episodes"} />
-              <EpisodeSearch />
+
+              <EpisodeSearch
+                onChangeInputValue={onChangeInputValue}
+                onClick={onClickEpisodeParams}
+              />
               <EpisodesCards currentEpisodePage={currentEpisodePage} />
               <div className="pages-btn">
                 <PagesBtn

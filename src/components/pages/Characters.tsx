@@ -7,13 +7,20 @@ import { CharactersFilter } from "../atoms/CharactersFilter";
 import { CharactersCard } from "../atoms/CharactersCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getSerialState } from "../../core/selectors/serialSelector";
-import { setCurrentCharacterPageAction } from "../../core/actions";
+import {
+  getCharacterParamsAction,
+  setCharacterParamsAction,
+  setCurrentCharacterPageAction,
+} from "../../core/actions";
 import { PagesBtn } from "../atoms/PagesBtn";
 
 export const Characters = memo(() => {
+  const dispatch = useDispatch();
+
+  // переключение страниц (по кнопкам)
+
   const { currentCharacterPage } = useSelector(getSerialState);
 
-  const dispatch = useDispatch();
   const nextCharacterPage = () => {
     dispatch(setCurrentCharacterPageAction(currentCharacterPage + 1));
   };
@@ -38,17 +45,67 @@ export const Characters = memo(() => {
     }
   }
 
+  // поиск по названию персонажей
+
+  const { characterParams } = useSelector(getSerialState);
+
+  const onChangeInputValue = (e: string) => {
+    dispatch(
+      setCharacterParamsAction({
+        ...characterParams,
+        name: e,
+      })
+    );
+  };
+
+  const onChangeHandlerSpecies = (text: string) => {
+    dispatch(
+      setCharacterParamsAction({
+        ...characterParams,
+        species: text,
+      })
+    );
+  };
+
+  const onChangeHandlerStatus = (text: string) => {
+    dispatch(
+      setCharacterParamsAction({
+        ...characterParams,
+        status: text,
+      })
+    );
+  };
+
+  const onChangeHandlerGender = (text: string) => {
+    dispatch(
+      setCharacterParamsAction({
+        ...characterParams,
+        gender: text,
+      })
+    );
+  };
+
+  const onClickCharacterParams = () => {
+    dispatch(getCharacterParamsAction(characterParams));
+  };
+
   return (
     <div>
       <MainTemplate
         mainBlock={
           <div className="characters-page-wrapper">
-            <div className="characters-page">
+            <div className="container characters-page">
               <div className="characters-logo">
                 <img src={CharactersLogo} className="characters-page-logo" />
               </div>
               <Title title={"Characters"} />
-              <CharactersFilter />
+              <CharactersFilter
+                onChangeInputValue={onChangeInputValue}
+                onChangeHandlerSpecies={onChangeHandlerSpecies}
+                onChangeHandlerGender={onChangeHandlerGender}
+                onChangeHandlerStatus={onChangeHandlerStatus}
+                onClick={onClickCharacterParams}
+              />
               <CharactersCard currentCharacterPage={currentCharacterPage} />
               <div className="pages-btn">
                 <PagesBtn

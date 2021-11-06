@@ -16,7 +16,7 @@ export const Home = memo(() => {
       <MainTemplate
         mainBlock={
           <div className="main-page-wrapper">
-            <div className="main-page">
+            <div className="container main-page">
               <div className="main-page-logo-search">
                 <img src={mainPageLogo} className="main-page-logo" />
               </div>

@@ -13,13 +13,13 @@
   font-size: 28px;
   line-height: 24px;
   letter-spacing: 0.15px;
-  color: #8e8e93;
+  color: #6e798c;
   text-align: start;
 }
 
 .residents-cards-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(231px, 1fr));
   gap: 25px;
   margin-bottom: 60px;
 }
@@ -27,13 +27,13 @@
 .selected-resident-card {
   margin-left: 0;
   height: 100%;
-  background: #dcf8cf;
+  background: #ffc980;
   border: 1px solid #ebebeb;
   box-sizing: border-box;
   border-radius: 35px;
   display: flex;
   flex-direction: column;
-  padding: 30px 35px;
+  padding: 15px 20px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
@@ -42,8 +42,19 @@
   text-align: left;
   color: #006d7c;
   animation: rotateCard 1s linear;
+  transition: 0.4s;
 }
 
-.selected-resident-card-img {
+.selected-resident-card img {
   border-radius: 20px;
+  transition: 0.4s;
+}
+
+.selected-resident-card:hover {
+  box-shadow: 1px 1px 7px 1px #505050;
+  margin-top: -2px;
+}
+
+.selected-resident-card:hover img {
+  transform: scale(0.9);
 }

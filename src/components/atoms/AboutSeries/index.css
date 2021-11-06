@@ -1,12 +1,36 @@
+.about-series-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-series-wrap {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
 .about-series {
-  margin-bottom: 15px;
+  width: 1000px;
+  margin-bottom: 50px;
   font-family: "Roboto";
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 14px;
   line-height: 1.75;
-  color: #006d7c;
+  color: #018b9d;
   text-align: center;
+}
+
+.about-series-list {
+  width: 500px;
+  margin-bottom: 35px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #018b9d;
+  text-align: left;
 }
 
 .about-series-more {
@@ -16,6 +40,11 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 1.75;
-  color: #006d7c;
+  color: #018b9d;
   text-align: center;
+}
+
+.promo-pic {
+  width: 210px;
+  height: 270px;
 }

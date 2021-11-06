@@ -1,12 +1,11 @@
 import * as React from "react";
-import { memo, useEffect, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import "./index.css";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import {
   IEpisodeCharacter,
   ILocationCharacter,
 } from "../../../types/character";
-import loading from "../../images/loading.gif";
+import { Link } from "react-router-dom";
 
 interface ICharaterInfo {
   gender: string;
@@ -36,6 +35,9 @@ export const CharacterInfo = memo(
     let [episodeNum, setEpisodeNum] = useState("");
     let [episodeDate, setEpisodeDate] = useState("");
     let [episodeId, setEpisodeId] = useState("");
+
+    const inputEl = useRef(null);
+
     useEffect(() => {
       episode.map((item) =>
         fetch(item)

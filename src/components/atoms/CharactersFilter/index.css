@@ -9,7 +9,7 @@
   margin-bottom: 20px;
   width: 150px;
   height: 28px;
-  border: 1px solid #ebebeb;
+  border: 1px solid #006d7c;
   box-sizing: border-box;
   border-radius: 8px;
   font-family: "Roboto";
@@ -20,7 +20,7 @@
   margin-bottom: 20px;
   width: 140px;
   height: 32px;
-  border: 1px solid #ebebeb;
+  border: 1px solid #006d7c;
   box-sizing: border-box;
   border-radius: 8px;
   font-family: "Roboto";
@@ -35,7 +35,7 @@
   border-radius: 10px;
   font-family: "Roboto";
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 15px;
   line-height: 1.75;
   color: #fff;

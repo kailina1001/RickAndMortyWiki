@@ -56,6 +56,7 @@ export const LocationInfo = memo(({ character }: ILocationInfo) => {
               <img
                 src={createArray(characterImg)[index]}
                 className="selected-resident-card-img"
+                alt="Character is loading..."
               />
               <p>{createArray(charactersNames)[index]}</p>
               <p>{createArray(characterSpecies)[index]}</p>

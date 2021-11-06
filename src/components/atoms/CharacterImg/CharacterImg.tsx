@@ -7,5 +7,5 @@ interface ICharacterImg {
 }
 
 export const CharacterImg = memo(({ image }: ICharacterImg) => (
-  <img src={image} className="character-img" />
+  <img src={image} className="character-img" alt="Character is loading..." />
 ));

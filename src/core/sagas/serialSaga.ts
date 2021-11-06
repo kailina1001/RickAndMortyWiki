@@ -95,53 +95,13 @@ function* getMainCharacterAction({ payload: mainCharacter }: Action<number>) {
   }
 }
 
-/* function* getCharacterSpeciesFilterAction({
-  payload: characterSpecies,
-}: Action<number>) {
-  try {
-    const data: { data: any } = yield call(() =>
-      CharacterService.getCharacter(characterSpecies)
-    );
-    yield put(setMainCharacterAction(data.data.results));
-  } catch (e: any) {
-    yield put(setSerialErrorAction("Character not found"));
-  }
-}
-
-function* getCharacterGenderFilterAction({
-  payload: characterGender,
-}: Action<number>) {
-  try {
-    const data: { data: any } = yield call(() =>
-      CharacterService.getCharacter(characterGender)
-    );
-
-    yield put(setMainCharacterAction(data.data.results));
-  } catch (e: any) {
-    yield put(setSerialErrorAction("Character not found"));
-  }
-}
-
-function* getCharacterStatusFilterAction({
-  payload: characterStatus,
-}: Action<number>) {
-  try {
-    const data: { data: any } = yield call(() =>
-      CharacterService.getCharacter(characterStatus)
-    );
-    yield put(setMainCharacterAction(data.data.results));
-  } catch (e: any) {
-    yield put(setSerialErrorAction("Character not found"));
-  }
-} */
-
 function* getFiltredCharacterSaga({ payload: characterParams }: Action<any>) {
   try {
     const data: { data: any } = yield call(() =>
       CharacterService.getCharacterFilterAction(characterParams)
     );
     yield put(setCharacterAction(data.data.results));
-  } catch (e: any) {
+  } catch (e) {
     yield put(setSerialErrorAction("Character not found"));
   }
 }
@@ -164,7 +124,14 @@ function* getFiltredEpisodeSaga({ payload: episodeParams }: Action<any>) {
     );
     yield put(setEpisodesAction(data.data.results));
   } catch (e: any) {
-    yield put(setSerialErrorAction("Location not found"));
+    /* const error = Object.keys(e.response.data).reduce(
+      (acc: string, field: string) => {
+        const value = e.response.data[field];
+        return acc + value.join(" ");
+      },
+      ""
+    );
+    yield put(setSerialErrorAction(error)); */
   }
 }
 

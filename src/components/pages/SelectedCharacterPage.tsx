@@ -6,7 +6,6 @@ import { getSerialState } from "../../core/selectors/serialSelector";
 import { useParams } from "react-router";
 import { getSelectedCharacterAction } from "../../core/actions/serialAction";
 import { SelectedCharacter } from "../molecules/SelectedCharacter";
-import { PageLoader } from "../atoms/PageLoader";
 
 /* const SelectedCharacter = lazy(() => import("../molecules/SelectedCharacter")); */
 
@@ -23,10 +22,10 @@ export const SelectedCharacterPage = memo(() => {
     /*   setIsLoaded(true); */
   }, [dispatch, params.id]);
 
-  //!! не работающий прелоудер!!!!!!!
+  /*   //!! не работающий прелоудер!!!!!!!
   if (!selectedCharacter) {
     return <PageLoader />;
-  }
+  } */
 
   return (
     <div>

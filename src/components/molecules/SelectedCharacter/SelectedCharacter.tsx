@@ -10,7 +10,7 @@ import { IСharacter } from "../../../types/character";
 
 export const SelectedCharacter = memo((character: IСharacter) => {
   return (
-    <div className="selected-character-wrapper">
+    <div className="container selected-character-wrapper">
       <div className="selected-character-header">
         <GoBackBtn />
         <SelectedCharacterImg image={character.image} />

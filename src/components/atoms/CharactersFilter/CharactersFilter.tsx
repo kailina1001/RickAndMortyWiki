@@ -1,108 +1,78 @@
 import * as React from "react";
 import { memo } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  getCharacterParamsAction,
-  setCharacterParamsAction,
-} from "../../../core";
+import { useSelector } from "react-redux";
 import { getSerialState } from "../../../core/selectors/serialSelector";
 import "./index.css";
 
-export const CharactersFilter = memo(() => {
-  const { characters, characterParams } = useSelector(getSerialState);
+interface ICharactersFilter {
+  onChangeInputValue: (text: string) => void;
+  onChangeHandlerSpecies: (text: string) => void;
+  onChangeHandlerGender: (text: string) => void;
+  onChangeHandlerStatus: (text: string) => void;
+  onClick: () => void;
+}
 
-  const characterSpecies = characters?.map((a) => a.species);
-  const characterSpeciesResult = Array.from(new Set(characterSpecies));
+export const CharactersFilter = memo(
+  ({
+    onClick,
+    onChangeInputValue,
+    onChangeHandlerSpecies,
+    onChangeHandlerGender,
+    onChangeHandlerStatus,
+  }: ICharactersFilter) => {
+    const { characters } = useSelector(getSerialState);
 
-  const characterGender = characters?.map((a) => a.gender);
-  const characterGenderResult = Array.from(new Set(characterGender));
+    const characterSpecies = characters?.map((a) => a.species);
+    const characterSpeciesResult = Array.from(new Set(characterSpecies));
 
-  const characterStatus = characters?.map((a) => a.status);
-  const characterStatusResult = Array.from(new Set(characterStatus));
+    const characterGender = characters?.map((a) => a.gender);
+    const characterGenderResult = Array.from(new Set(characterGender));
 
-  const dispatch = useDispatch();
+    const characterStatus = characters?.map((a) => a.status);
+    const characterStatusResult = Array.from(new Set(characterStatus));
 
-  const onChangeInputValue = (e: string) => {
-    dispatch(
-      setCharacterParamsAction({
-        ...characterParams,
-        name: e,
-      })
+    return (
+      <div className="characters-filter">
+        <input
+          onChange={(e) => onChangeInputValue(e.target.value)}
+          placeholder="Filter by name..."
+          type="search"
+          className="characters-search"
+        ></input>
+        <select
+          className="character-filter-select"
+          onChange={(e) => onChangeHandlerSpecies(e.target.value)}
+        >
+          <option value="species">Species</option>
+          {characterSpeciesResult.map((result) => (
+            <option value={result.toLowerCase()}>{result.toUpperCase()}</option>
+          ))}
+        </select>
+        <select
+          className="character-filter-select"
+          onChange={(e) => onChangeHandlerGender(e.target.value)}
+        >
+          <option value="gender">Gender</option>
+          {characterGenderResult.map((result) => (
+            <option value={result.toLowerCase()}>{result.toUpperCase()}</option>
+          ))}
+        </select>
+        <select
+          className="character-filter-select"
+          onChange={(e) => onChangeHandlerStatus(e.target.value)}
+        >
+          <option value="status">Status</option>
+          {characterStatusResult.map((result) => (
+            <option value={result.toLowerCase()}>{result.toUpperCase()}</option>
+          ))}
+        </select>
+        <button
+          className="character-filter-btn active"
+          onClick={() => onClick()}
+        >
+          Show character
+        </button>
+      </div>
     );
-  };
-
-  const onChangeHandlerSpecies = (text: string) => {
-    dispatch(
-      setCharacterParamsAction({
-        ...characterParams,
-        species: text,
-      })
-    );
-  };
-
-  const onChangeHandlerStatus = (text: string) => {
-    dispatch(
-      setCharacterParamsAction({
-        ...characterParams,
-        status: text,
-      })
-    );
-  };
-
-  const onChangeHandlerGender = (text: string) => {
-    dispatch(
-      setCharacterParamsAction({
-        ...characterParams,
-        gender: text,
-      })
-    );
-  };
-
-  const onClickCharacterParams = () => {
-    dispatch(getCharacterParamsAction(characterParams));
-  };
-
-  return (
-    <div className="characters-filter">
-      <input
-        onChange={(e) => onChangeInputValue(e.target.value)}
-        placeholder="Filter by name..."
-        type="search"
-        className="characters-search"
-      ></input>
-      <select
-        className="character-filter-select"
-        onChange={(e) => onChangeHandlerSpecies(e.target.value)}
-      >
-        <option value="species">Species</option>
-        {characterSpeciesResult.map((result) => (
-          <option value={result.toLowerCase()}>{result.toUpperCase()}</option>
-        ))}
-      </select>
-      <select
-        className="character-filter-select"
-        onChange={(e) => onChangeHandlerGender(e.target.value)}
-      >
-        <option value="gender">Gender</option>
-        {characterGenderResult.map((result) => (
-          <option value={result.toLowerCase()}>{result.toUpperCase()}</option>
-        ))}
-      </select>
-      <select
-        className="character-filter-select"
-        onChange={(e) => onChangeHandlerStatus(e.target.value)}
-      >
-        <option value="status">Status</option>
-        {characterStatusResult.map((result) => (
-          <option value={result.toLowerCase()}>{result.toUpperCase()}</option>
-        ))}
-      </select>
-      <button
-        className="character-filter-btn active"
-        onClick={onClickCharacterParams}
-      >
-        Show character
-      </button>
-    </div>
-  );
-});
+  }
+);

@@ -7,18 +7,20 @@
   border-radius: 13px;
   font-family: "Roboto";
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 18px;
   line-height: 1.75;
   color: #fff;
 }
 
 .active {
-  background: #006d7c;
+  background: #0c9cb0;
 }
 
 .active:hover {
-  background: #6060b6;
+  background: #e07290;
+  box-shadow: 1px 1px 7px 1px #505050;
+  /* margin-bottom: 2px; */
 }
 .previous-btn {
   display: none;
