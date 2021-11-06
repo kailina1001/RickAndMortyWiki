@@ -1,7 +1,7 @@
 .character-card {
   margin-left: 0;
   height: 100%;
-  background: #dcf8cf;
+  background: #ffc980;
   border: 1px solid #ebebeb;
   box-sizing: border-box;
   border-radius: 35px;
@@ -16,11 +16,20 @@
   text-align: left;
   color: #006d7c;
   animation: rotateCard 1s linear;
+  transition: 0.4s;
+}
+
+.character-card img {
+  transition: 0.4s;
 }
 
 .character-card:hover {
   box-shadow: 1px 1px 7px 1px #505050;
   margin-top: -2px;
+}
+
+.character-card:hover img {
+  transform: scale(0.9);
 }
 
 .characters-cards-wrapper {

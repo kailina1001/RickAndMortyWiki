@@ -2,13 +2,7 @@ import * as React from "react";
 import { memo } from "react";
 import "./index.css";
 import navLogo from "../../../images/nav-logo.svg";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 export const Navigation = memo(() => {
   return (

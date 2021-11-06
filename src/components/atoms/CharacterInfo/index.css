@@ -13,7 +13,7 @@
   display: flex;
   align-items: left;
   letter-spacing: 0.15px;
-  color: #8e8e93;
+  color: #7f7f86;
   margin-bottom: 15px;
 }
 
@@ -63,7 +63,7 @@ dd {
   display: flex;
   align-items: center;
   letter-spacing: 0.15px;
-  color: #8e8e93;
+  color: #7f7f86;
   margin-bottom: 15px;
 }
 
@@ -110,5 +110,5 @@ dd {
   background: url(../../../images/arrow-link.png) no-repeat;
 }
 .arrow-link:hover {
-  background-color: #dcf8cf;
+  background-color: #c3f8f5;
 }

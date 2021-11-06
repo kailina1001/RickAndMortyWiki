@@ -59,10 +59,10 @@ export const getSelectedEpisodesAction = createAction(
 
 export const setSerialErrorAction = createAction(
   ACTIONS.SET_SERIAL_ERROR_ACTION
-)<string | null>();
-/* export const getSerialErrorAction = createAction(
+)<any>();
+export const getSerialErrorAction = createAction(
   ACTIONS.GET_SERIAL_ERROR_ACTION
-)<string | null>(); */
+)<any>();
 
 export const setMainCharacterAction = createAction(
   ACTIONS.SET_MAIN_CHARACTER_ACTION

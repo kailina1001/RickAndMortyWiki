@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { EpisodeAirData } from "../EpisodeAirData";
 import { EpisodeName } from "../EpisodeName";
 import { EpisodeNumber } from "../EpisodeNumber";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import { getSerialState } from "../../../core/selectors/serialSelector";
 import { getEpisodesAction } from "../../../core/actions";
 import "./index.css";
+import { Link } from "react-router-dom";
 
 interface IEpisodeCards {
   currentEpisodePage: number;

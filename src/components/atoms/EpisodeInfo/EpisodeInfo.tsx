@@ -1,8 +1,6 @@
 import * as React from "react";
 import { memo, useEffect, useState } from "react";
 import "./index.css";
-import { ResidentsCards } from "../ResidentsCards";
-import { CharactersCard } from "../CharactersCard";
 import { Link } from "react-router-dom";
 
 interface IEpisodeInfo {
@@ -56,6 +54,7 @@ export const EpisodeInfo = memo(({ character }: IEpisodeInfo) => {
               <img
                 src={createArray(characterImg)[index]}
                 className="selected-cast-card-img"
+                alt="Character is loading..."
               />
               <p>{createArray(charactersNames)[index]}</p>
               <p>{createArray(characterSpecies)[index]}</p>

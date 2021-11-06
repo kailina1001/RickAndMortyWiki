@@ -4,13 +4,19 @@
   margin-bottom: 50px;
   width: 100px;
   height: 35px;
-  background: #dcf8cf;
+  background: #006d7c;
   border: 1px solid #006d7c;
   border-radius: 13px;
   font-family: "Roboto";
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 18px;
   line-height: 1.75;
-  color: #006d7c;
+  color: #fff;
+}
+
+.selected-btn:hover {
+  background: #e07290;
+  box-shadow: 1px 1px 7px 1px #505050;
+  margin-top: -2px;
 }

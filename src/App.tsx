@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { PublicRoute } from "./router/PublicRoute";
 import { Home } from "./components/pages/Main";
 import { Characters } from "./components/pages/Characters";
@@ -10,6 +9,7 @@ import { SelectedCharacterPage } from "./components/pages/SelectedCharacterPage"
 import { SelectedLocationPage } from "./components/pages/SelectedLocationPage";
 import { SelectedEpisodePage } from "./components/pages/SelectedEpisodePage";
 import { ErrorPage } from "./components/pages/ErrorPage";
+import { Switch } from "react-router-dom";
 
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
           path="/episode/:id"
           exact
         />
-        <PublicRoute component={ErrorPage} exact />
+        <PublicRoute path="/notfound" component={ErrorPage} exact />
       </Switch>
     </div>
   );

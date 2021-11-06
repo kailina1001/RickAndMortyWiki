@@ -1,13 +1,14 @@
 import * as React from "react";
 import { memo, useEffect } from "react";
 import "./index.css";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import { CharacterName } from "../CharacterName";
 import { CharacterImg } from "../CharacterImg";
 import { CharacterSpecies } from "../CharacterSpecies";
 import { useDispatch, useSelector } from "react-redux";
 import { getSerialState } from "../../../core/selectors/serialSelector";
-import { getCharacterAction } from "../../../core/actions/serialAction";
+import { getCharacterAction } from "../../../core/actions";
+import { Link } from "react-router-dom";
+
 
 interface ICharactersCard {
   currentCharacterPage: number;

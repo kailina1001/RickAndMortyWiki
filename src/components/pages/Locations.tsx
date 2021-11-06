@@ -6,14 +6,21 @@ import LocationsLogo from "../../images/LocationsLogo.png";
 import { LocationsFilter } from "../atoms/LocationsFilter";
 import { LocationsCards } from "../atoms/LocationsCards";
 import { PagesBtn } from "../atoms/PagesBtn";
-import { setCurrentLocationPageAction } from "../../core/actions";
+import {
+  getLocationParamsAction,
+  setCurrentLocationPageAction,
+  setLocationParamsAction,
+} from "../../core/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { getSerialState } from "../../core/selectors/serialSelector";
 
 export const Locations = memo(() => {
+  const dispatch = useDispatch();
+
+  // переключение страниц (по кнопкам)
+
   const { currentLocationPage } = useSelector(getSerialState);
 
-  const dispatch = useDispatch();
   const nextLocationPage = () => {
     dispatch(setCurrentLocationPageAction(currentLocationPage + 1));
   };
@@ -38,17 +45,57 @@ export const Locations = memo(() => {
     }
   }
 
+  // поиск по названию локации
+
+  const { locationParams } = useSelector(getSerialState);
+
+  const onChangeInputValue = (text: string) => {
+    dispatch(
+      setLocationParamsAction({
+        ...locationParams,
+        name: text,
+      })
+    );
+  };
+
+  const onChangeHandlerType = (text: string) => {
+    dispatch(
+      setLocationParamsAction({
+        ...locationParams,
+        type: text,
+      })
+    );
+  };
+
+  const onChangeHandlerDimension = (text: string) => {
+    dispatch(
+      setLocationParamsAction({
+        ...locationParams,
+        dimension: text,
+      })
+    );
+  };
+
+  const onClickLocationParams = () => {
+    dispatch(getLocationParamsAction(locationParams));
+  };
+
   return (
     <div>
       <MainTemplate
         mainBlock={
           <div className="locations-page-wrapper">
-            <div className="locations-page">
+            <div className="container locations-page">
               <div className="locations-logo">
                 <img src={LocationsLogo} className="locations-page-logo" />
               </div>
               <Title title={"Locations"} />
-              <LocationsFilter />
+              <LocationsFilter
+                onChangeInputValue={onChangeInputValue}
+                onChangeHandlerType={onChangeHandlerType}
+                onChangeHandlerDimension={onChangeHandlerDimension}
+                onClick={onClickLocationParams}
+              />
               <LocationsCards currentLocationPage={currentLocationPage} />
               <div className="pages-btn">
                 <PagesBtn

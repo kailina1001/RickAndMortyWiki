@@ -6,16 +6,15 @@
 }
 
 .episode-page-search {
-  width: 370px;
-  height: 28px;
-  border: 1px solid #ebebeb;
+  width: 250px;
+  height: 30px;
+  border: 1px solid #006d7c;
   box-sizing: border-box;
   border-radius: 8px;
   font-family: "Roboto";
   padding-left: 20px;
   display: block;
   margin-right: 50px;
-  /*  margin: 0 auto 20px auto; */
 }
 
 .episode-filter-btn {
