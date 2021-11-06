@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/RickAndMortyWiki/static/css/main.8f3855e8.chunk.css",
-    "main.js": "/RickAndMortyWiki/static/js/main.e5d88dec.chunk.js",
-    "main.js.map": "/RickAndMortyWiki/static/js/main.e5d88dec.chunk.js.map",
-    "runtime-main.js": "/RickAndMortyWiki/static/js/runtime-main.5c694def.js",
-    "runtime-main.js.map": "/RickAndMortyWiki/static/js/runtime-main.5c694def.js.map",
-    "static/js/2.fe746095.chunk.js": "/RickAndMortyWiki/static/js/2.fe746095.chunk.js",
-    "static/js/2.fe746095.chunk.js.map": "/RickAndMortyWiki/static/js/2.fe746095.chunk.js.map",
-    "static/js/3.62a1eb59.chunk.js": "/RickAndMortyWiki/static/js/3.62a1eb59.chunk.js",
-    "static/js/3.62a1eb59.chunk.js.map": "/RickAndMortyWiki/static/js/3.62a1eb59.chunk.js.map",
+    "main.js": "/RickAndMortyWiki/static/js/main.c31d83f7.chunk.js",
+    "main.js.map": "/RickAndMortyWiki/static/js/main.c31d83f7.chunk.js.map",
+    "runtime-main.js": "/RickAndMortyWiki/static/js/runtime-main.577a2662.js",
+    "runtime-main.js.map": "/RickAndMortyWiki/static/js/runtime-main.577a2662.js.map",
+    "static/js/2.6ed18978.chunk.js": "/RickAndMortyWiki/static/js/2.6ed18978.chunk.js",
+    "static/js/2.6ed18978.chunk.js.map": "/RickAndMortyWiki/static/js/2.6ed18978.chunk.js.map",
+    "static/js/3.103d5f2e.chunk.js": "/RickAndMortyWiki/static/js/3.103d5f2e.chunk.js",
+    "static/js/3.103d5f2e.chunk.js.map": "/RickAndMortyWiki/static/js/3.103d5f2e.chunk.js.map",
     "index.html": "/RickAndMortyWiki/index.html",
     "static/css/main.8f3855e8.chunk.css.map": "/RickAndMortyWiki/static/css/main.8f3855e8.chunk.css.map",
-    "static/js/2.fe746095.chunk.js.LICENSE.txt": "/RickAndMortyWiki/static/js/2.fe746095.chunk.js.LICENSE.txt",
+    "static/js/2.6ed18978.chunk.js.LICENSE.txt": "/RickAndMortyWiki/static/js/2.6ed18978.chunk.js.LICENSE.txt",
     "static/media/CharactersLogo.e2c5e137.png": "/RickAndMortyWiki/static/media/CharactersLogo.e2c5e137.png",
     "static/media/EpisodesLogo.1bd9c0c8.png": "/RickAndMortyWiki/static/media/EpisodesLogo.1bd9c0c8.png",
     "static/media/LocationsLogo.d34641f0.png": "/RickAndMortyWiki/static/media/LocationsLogo.d34641f0.png",
@@ -23,9 +23,9 @@
     "static/media/notfound.4cb1bc12.gif": "/RickAndMortyWiki/static/media/notfound.4cb1bc12.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.5c694def.js",
-    "static/js/2.fe746095.chunk.js",
+    "static/js/runtime-main.577a2662.js",
+    "static/js/2.6ed18978.chunk.js",
     "static/css/main.8f3855e8.chunk.css",
-    "static/js/main.e5d88dec.chunk.js"
+    "static/js/main.c31d83f7.chunk.js"
   ]
 }
