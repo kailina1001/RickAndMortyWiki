@@ -15,6 +15,10 @@ import { CharacterService } from "../../services/CharacterService";
 import { LocationService } from "../../services/LocationService";
 import { EpisodeService } from "../../services/EpisodeService";
 
+let isCharacterFilterError = false;
+let isLocationFilterError = false;
+let isEpisodeFilterError = false;
+
 function* getCharacterSaga({ payload: currentCharacterPage }: Action<number>) {
   try {
     const data: { data: any } = yield call(() =>
@@ -101,8 +105,10 @@ function* getFiltredCharacterSaga({ payload: characterParams }: Action<any>) {
       CharacterService.getCharacterFilterAction(characterParams)
     );
     yield put(setCharacterAction(data.data.results));
+    isCharacterFilterError = false;
   } catch (e) {
-    yield put(setSerialErrorAction("Character not found"));
+    yield put(setSerialErrorAction({ e }));
+    isCharacterFilterError = true;
   }
 }
 
@@ -112,8 +118,10 @@ function* getFiltredLocationSaga({ payload: locationParams }: Action<any>) {
       LocationService.getLocationFilterAction(locationParams)
     );
     yield put(setLocationAction(data.data.results));
-  } catch (e: any) {
-    yield put(setSerialErrorAction("Location not found"));
+    isLocationFilterError = false;
+  } catch (e) {
+    yield put(setSerialErrorAction({ e }));
+    isLocationFilterError = true;
   }
 }
 
@@ -123,15 +131,10 @@ function* getFiltredEpisodeSaga({ payload: episodeParams }: Action<any>) {
       EpisodeService.getEpisodeFilterAction(episodeParams)
     );
     yield put(setEpisodesAction(data.data.results));
-  } catch (e: any) {
-    /* const error = Object.keys(e.response.data).reduce(
-      (acc: string, field: string) => {
-        const value = e.response.data[field];
-        return acc + value.join(" ");
-      },
-      ""
-    );
-    yield put(setSerialErrorAction(error)); */
+    isEpisodeFilterError = false;
+  } catch (e) {
+    yield put(setSerialErrorAction({ e }));
+    isEpisodeFilterError = true;
   }
 }
 
@@ -154,3 +157,4 @@ export function* serialSaga() {
   yield takeEvery(ACTIONS.GET_LOCATION_PARAMS_ACTION, getFiltredLocationSaga);
   yield takeEvery(ACTIONS.GET_EPISODE_PARAMS_ACTION, getFiltredEpisodeSaga);
 }
+export { isCharacterFilterError, isLocationFilterError, isEpisodeFilterError };

@@ -13,6 +13,8 @@ import {
 } from "../../core/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { getSerialState } from "../../core/selectors/serialSelector";
+import { NotFound } from "../atoms/NotFound";
+import { isLocationFilterError } from "../../core/sagas";
 
 export const Locations = memo(() => {
   const dispatch = useDispatch();
@@ -78,6 +80,7 @@ export const Locations = memo(() => {
 
   const onClickLocationParams = () => {
     dispatch(getLocationParamsAction(locationParams));
+    dispatch(getLocationParamsAction(locationParams));
   };
 
   return (
@@ -96,25 +99,31 @@ export const Locations = memo(() => {
                 onChangeHandlerDimension={onChangeHandlerDimension}
                 onClick={onClickLocationParams}
               />
-              <LocationsCards currentLocationPage={currentLocationPage} />
-              <div className="pages-btn">
-                <PagesBtn
-                  title={"Previous"}
-                  onClickPage={() => {
-                    checkPage(currentLocationPage, "prev");
-                    prevLocationPage();
-                  }}
-                  btnClassName={"previous-btn"}
-                />
-                <PagesBtn
-                  title={"Next"}
-                  onClickPage={() => {
-                    checkPage(currentLocationPage, "next");
-                    nextLocationPage();
-                  }}
-                  btnClassName={"next-btn"}
-                />
-              </div>
+              {isLocationFilterError ? (
+                <NotFound />
+              ) : (
+                <div>
+                  <LocationsCards currentLocationPage={currentLocationPage} />
+                  <div className="pages-btn">
+                    <PagesBtn
+                      title={"Previous"}
+                      onClickPage={() => {
+                        checkPage(currentLocationPage, "prev");
+                        prevLocationPage();
+                      }}
+                      btnClassName={"previous-btn"}
+                    />
+                    <PagesBtn
+                      title={"Next"}
+                      onClickPage={() => {
+                        checkPage(currentLocationPage, "next");
+                        nextLocationPage();
+                      }}
+                      btnClassName={"next-btn"}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         }

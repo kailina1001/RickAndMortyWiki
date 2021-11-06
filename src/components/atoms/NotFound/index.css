@@ -1,0 +1,30 @@
+.not-found-block {
+  position: relative;
+  align-self: center;
+  flex: 1 1 auto;
+  width: 100%;
+  padding-bottom: 40px;
+}
+.not-found-pic {
+  width: 100%;
+  border-radius: 10px;
+}
+.not-found-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 70px;
+  max-width: 200px;
+  font-weight: 700;
+  color: #03e2ff;
+  text-shadow: 5px 6px 2px black;
+  animation: 4s notFoundText linear alternate infinite;
+}
+@keyframes notFoundText {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 71%;
+  }
+}
