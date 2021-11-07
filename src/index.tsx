@@ -27,7 +27,7 @@ EpisodeService.setCredentials({
 EpisodeService.prefix = "episode";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/RickAndMortyWiki">
     <Provider store={store}>
       <App />
     </Provider>

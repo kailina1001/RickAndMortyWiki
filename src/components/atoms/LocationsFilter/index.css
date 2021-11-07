@@ -1,8 +1,9 @@
 .locations-filter {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin: 0 25px;
+  flex-wrap: wrap;
 }
 
 .locations-search {
@@ -39,4 +40,14 @@
   font-size: 15px;
   line-height: 1.75;
   color: #fff;
+}
+@media (max-width: 740px) {
+  .location-filter-btn {
+    width: 100%;
+  }
+}
+@media (max-width: 435px) {
+  .locations-filter {
+    justify-content: center;
+  }
 }

@@ -1,7 +1,6 @@
 .selected-location-name {
   margin: 0 auto;
   margin-bottom: 70px;
-  width: 400px;
   height: 35px;
   font-family: "Roboto";
   font-style: normal;
@@ -10,4 +9,7 @@
   line-height: 1.75;
   color: #006d7c;
   text-align: center;
+}
+.selected-location-div {
+  width: 100%;
 }

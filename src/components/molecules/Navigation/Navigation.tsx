@@ -5,6 +5,14 @@ import navLogo from "../../../images/nav-logo.svg";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 export const Navigation = memo(() => {
+  function openMobile() {
+    const navMenu = document.querySelector(".app-nav");
+    const mobileBtn = document.querySelector(".mobile-menu-btn");
+    const navList = document.querySelector(".nav-list");
+    navMenu?.classList.toggle("mobile-active");
+    mobileBtn?.classList.toggle("mobile-active");
+    navList?.classList.toggle("mobile-active");
+  }
   return (
     <nav className="app-nav">
       <div className="container app-nav__container">
@@ -35,6 +43,9 @@ export const Navigation = memo(() => {
             </Link>
           </li>
         </ul>
+        <button className="mobile-menu-btn" onClick={openMobile}>
+          <span></span>
+        </button>
       </div>
     </nav>
   );

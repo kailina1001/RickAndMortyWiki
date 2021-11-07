@@ -1,6 +1,6 @@
 .selected-btn {
   position: absolute;
-  left: 5px;
+  left: 0;
   margin-bottom: 50px;
   width: 100px;
   height: 35px;
@@ -19,4 +19,11 @@
   background: #e07290;
   box-shadow: 1px 1px 7px 1px #505050;
   margin-top: -2px;
+}
+@media (max-width: 485px) {
+  .selected-btn {
+    top: -20px;
+    left: -20px;
+    max-width: fit-content;
+  }
 }

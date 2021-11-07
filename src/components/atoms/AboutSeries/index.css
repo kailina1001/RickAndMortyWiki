@@ -10,7 +10,7 @@
 }
 
 .about-series {
-  width: 1000px;
+  max-width: 100%;
   margin-bottom: 50px;
   font-family: "Roboto";
   font-style: normal;
@@ -22,7 +22,6 @@
 }
 
 .about-series-list {
-  width: 500px;
   margin-bottom: 35px;
   font-family: "Roboto";
   font-style: normal;
@@ -47,4 +46,9 @@
 .promo-pic {
   width: 210px;
   height: 270px;
+}
+@media (max-width: 640px) {
+  .promo-pic {
+    display: none;
+  }
 }

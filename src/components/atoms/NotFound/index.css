@@ -28,3 +28,19 @@
     top: 71%;
   }
 }
+@media (max-width: 1015px) {
+  .not-found-text {
+    animation: none;
+  }
+}
+@media (max-width: 725px) {
+  .not-found-text {
+    font-size: 40px;
+  }
+}
+@media (max-width: 470px) {
+  .not-found-text {
+    font-size: 25px;
+    max-width: 100px;
+  }
+}

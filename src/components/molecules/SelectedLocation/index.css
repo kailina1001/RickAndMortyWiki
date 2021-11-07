@@ -10,7 +10,7 @@
   border: 1px solid #f7eeb8;
   box-sizing: border-box;
   border-radius: 13px;
-  padding: 30px 100px 10px 100px;
+  padding: 30px 20px 10px 20px;
 }
 
 .selected-location-header {
@@ -23,7 +23,7 @@
 
 .selected-location-type {
   display: flex;
-  width: 400px;
+  max-width: 400px;
   justify-content: space-between;
   margin: 0 auto;
   margin-bottom: 45px;
