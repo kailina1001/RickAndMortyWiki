@@ -349,7 +349,7 @@ body {
   border: 1px solid #f7eeb8;
   box-sizing: border-box;
   border-radius: 13px;
-  padding: 10px 100px 10px 100px;
+  padding: 10px;
 }
 
 .main-page-logo-search {
@@ -359,7 +359,7 @@ body {
 }
 
 .main-page-logo {
-  width: 420px;
+  max-width: 100%;
   height: 160px;
   margin-bottom: 15px;
 }
@@ -373,9 +373,9 @@ body {
 .main-characters {
   display: flex;
   flex-direction: column;
+  align-items: center;
   max-width: 100%;
-  margin-left: 100px;
-  margin-right: 100px;
+  padding: 0 50px;
   min-height: 300px;
 }
 
@@ -393,13 +393,13 @@ body {
   border: 1px solid #f7eeb8;
   box-sizing: border-box;
   border-radius: 13px;
-  padding: 10px 100px 10px 100px;
+  padding: 10px 20px;
 }
 
 .characters-page-logo {
   margin-bottom: 15px;
-  width: 420px;
   height: 160px;
+  max-width: 100%;
 }
 
 .characters-logo {
@@ -428,12 +428,12 @@ body {
   border: 1px solid #f7eeb8;
   box-sizing: border-box;
   border-radius: 13px;
-  padding: 10px 100px 10px 100px;
+  padding: 10px 20px 10px 20px;
 }
 
 .locations-page-logo {
   margin-bottom: 15px;
-  width: 370px;
+  max-width: 100%;
   height: 210px;
 }
 
@@ -457,7 +457,7 @@ body {
   border: 1px solid #f7eeb8;
   box-sizing: border-box;
   border-radius: 13px;
-  padding: 10px 100px 10px 100px;
+  padding: 10px 20px 10px 20px;
 }
 
 .episodes-page-logo {
@@ -495,7 +495,7 @@ body {
   border: 1px solid #f7eeb8;
   box-sizing: border-box;
   border-radius: 13px;
-  padding: 30px 100px 10px 100px;
+  padding: 30px 20px 10px 20px;
 }
 
 /* ---------------------------------------Error page------------------------------------------------ */
@@ -507,4 +507,16 @@ body {
 
 .error-page-pic {
   border-radius: 50px;
+}
+.up-button {
+  padding: 0 15px;
+  font-size: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: none;
+  border: 4px solid rgb(96 255 234);
+  background: rgb(12 137 139 / 52%);
+  border-radius: 40%;
+  display: none;
 }

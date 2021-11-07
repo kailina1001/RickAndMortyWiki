@@ -1,8 +1,9 @@
 .characters-filter {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin: 0 25px;
+  flex-wrap: wrap;
 }
 
 .characters-search {
@@ -18,7 +19,7 @@
 
 .character-filter-select {
   margin-bottom: 20px;
-  width: 140px;
+  width: 150px;
   height: 32px;
   border: 1px solid #006d7c;
   box-sizing: border-box;
@@ -39,4 +40,14 @@
   font-size: 15px;
   line-height: 1.75;
   color: #fff;
+}
+@media (max-width: 830px) {
+  .character-filter-btn {
+    width: 100%;
+  }
+}
+@media (max-width: 391px) {
+  .characters-filter {
+    justify-content: center;
+  }
 }

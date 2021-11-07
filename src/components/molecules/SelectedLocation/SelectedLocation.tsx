@@ -13,7 +13,7 @@ export const SelectedLocation = memo((location: ILocation) => {
     <div>
       <div className="selected-location-header">
         <GoBackBtn />
-        <div>
+        <div className="selected-location-div">
           <SelectedLocationName name={location.name} />
           <div className="selected-location-type">
             <div>
