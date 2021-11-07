@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/RickAndMortyWiki/static/css/main.8f3855e8.chunk.css",
-    "main.js": "/RickAndMortyWiki/static/js/main.77429af6.chunk.js",
-    "main.js.map": "/RickAndMortyWiki/static/js/main.77429af6.chunk.js.map",
+    "main.css": "/RickAndMortyWiki/static/css/main.7399061a.chunk.css",
+    "main.js": "/RickAndMortyWiki/static/js/main.cb824b9e.chunk.js",
+    "main.js.map": "/RickAndMortyWiki/static/js/main.cb824b9e.chunk.js.map",
     "runtime-main.js": "/RickAndMortyWiki/static/js/runtime-main.577a2662.js",
     "runtime-main.js.map": "/RickAndMortyWiki/static/js/runtime-main.577a2662.js.map",
     "static/js/2.6ed18978.chunk.js": "/RickAndMortyWiki/static/js/2.6ed18978.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.103d5f2e.chunk.js": "/RickAndMortyWiki/static/js/3.103d5f2e.chunk.js",
     "static/js/3.103d5f2e.chunk.js.map": "/RickAndMortyWiki/static/js/3.103d5f2e.chunk.js.map",
     "index.html": "/RickAndMortyWiki/index.html",
-    "static/css/main.8f3855e8.chunk.css.map": "/RickAndMortyWiki/static/css/main.8f3855e8.chunk.css.map",
+    "static/css/main.7399061a.chunk.css.map": "/RickAndMortyWiki/static/css/main.7399061a.chunk.css.map",
     "static/js/2.6ed18978.chunk.js.LICENSE.txt": "/RickAndMortyWiki/static/js/2.6ed18978.chunk.js.LICENSE.txt",
     "static/media/CharactersLogo.e2c5e137.png": "/RickAndMortyWiki/static/media/CharactersLogo.e2c5e137.png",
     "static/media/EpisodesLogo.1bd9c0c8.png": "/RickAndMortyWiki/static/media/EpisodesLogo.1bd9c0c8.png",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.577a2662.js",
     "static/js/2.6ed18978.chunk.js",
-    "static/css/main.8f3855e8.chunk.css",
-    "static/js/main.77429af6.chunk.js"
+    "static/css/main.7399061a.chunk.css",
+    "static/js/main.cb824b9e.chunk.js"
   ]
 }
