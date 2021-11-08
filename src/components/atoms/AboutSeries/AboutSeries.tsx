@@ -38,8 +38,8 @@ export const AboutSeries = memo(() => (
       </div>
     </div>
     <p className="about-series-more">
-      If you want to learn about the characters, locations and episodes - use
-      the navigation bar (at the top)
+      If you want to learn about characters, locations and episodes - use the
+      navigation bar (at the top)
     </p>
   </div>
 ));
